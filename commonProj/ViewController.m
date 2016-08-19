@@ -10,18 +10,29 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) UITableView *tableView;
+
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+- (void)dealloc
+{
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+
+- (void)initTabelView
+{
+    UITableView *tableView = [[UITableView alloc] init];
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview: tableView];
+    
+    _tableView = tableView;
 }
 
 @end
