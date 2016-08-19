@@ -13,3 +13,15 @@
 
 @end
 
+@interface CPAutoHeightCell : UITableViewCell
+
+- (void)setLabelText:(NSString *)text;
+
+@end
+
+static const NSInteger separatorCellHeight = 8.;
+
+@interface CPSeparatorCell : UITableViewCell
+
+@end
+

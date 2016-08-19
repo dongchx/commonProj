@@ -16,6 +16,9 @@
 		A4AE6DE41D655FDD0038E4A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AE6DE21D655FDD0038E4A1 /* LaunchScreen.storyboard */; };
 		A4AE6DEF1D655FDE0038E4A1 /* commonProjTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AE6DEE1D655FDE0038E4A1 /* commonProjTests.m */; };
 		A4AE6DFA1D655FDE0038E4A1 /* commonProjUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AE6DF91D655FDE0038E4A1 /* commonProjUITests.m */; };
+		A4AE6E0F1D66ECDA0038E4A1 /* UITableView+CPAutoSizingCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AE6E0E1D66ECDA0038E4A1 /* UITableView+CPAutoSizingCategory.m */; };
+		A4AE6E121D66ED2B0038E4A1 /* UITableViewCell+CPAutoSizingCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AE6E111D66ED2B0038E4A1 /* UITableViewCell+CPAutoSizingCategory.m */; };
+		A4AE6E151D66FD880038E4A1 /* UIColor+CPSimpleColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AE6E141D66FD880038E4A1 /* UIColor+CPSimpleColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,12 @@
 		A4AE6DF51D655FDE0038E4A1 /* commonProjUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = commonProjUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4AE6DF91D655FDE0038E4A1 /* commonProjUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = commonProjUITests.m; sourceTree = "<group>"; };
 		A4AE6DFB1D655FDE0038E4A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4AE6E0D1D66ECDA0038E4A1 /* UITableView+CPAutoSizingCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+CPAutoSizingCategory.h"; path = "Category/UITableView+CPAutoSizingCategory.h"; sourceTree = "<group>"; };
+		A4AE6E0E1D66ECDA0038E4A1 /* UITableView+CPAutoSizingCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+CPAutoSizingCategory.m"; path = "Category/UITableView+CPAutoSizingCategory.m"; sourceTree = "<group>"; };
+		A4AE6E101D66ED2B0038E4A1 /* UITableViewCell+CPAutoSizingCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+CPAutoSizingCategory.h"; path = "Category/UITableViewCell+CPAutoSizingCategory.h"; sourceTree = "<group>"; };
+		A4AE6E111D66ED2B0038E4A1 /* UITableViewCell+CPAutoSizingCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+CPAutoSizingCategory.m"; path = "Category/UITableViewCell+CPAutoSizingCategory.m"; sourceTree = "<group>"; };
+		A4AE6E131D66FD880038E4A1 /* UIColor+CPSimpleColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+CPSimpleColor.h"; path = "Category/UIColor+CPSimpleColor.h"; sourceTree = "<group>"; };
+		A4AE6E141D66FD880038E4A1 /* UIColor+CPSimpleColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CPSimpleColor.m"; path = "Category/UIColor+CPSimpleColor.m"; sourceTree = "<group>"; };
 		DC75B0E74DD1EEB56D75BA0D /* Pods-commonProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-commonProj.release.xcconfig"; path = "Pods/Target Support Files/Pods-commonProj/Pods-commonProj.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,14 +126,11 @@
 		A4AE6DD31D655FDD0038E4A1 /* commonProj */ = {
 			isa = PBXGroup;
 			children = (
+				A4AE6E0C1D66EC750038E4A1 /* Category */,
 				A4AE6DD71D655FDD0038E4A1 /* AppDelegate.h */,
 				A4AE6DD81D655FDD0038E4A1 /* AppDelegate.m */,
 				A4AE6DDA1D655FDD0038E4A1 /* ViewController.h */,
 				A4AE6DDB1D655FDD0038E4A1 /* ViewController.m */,
-				A4AE6DDD1D655FDD0038E4A1 /* Main.storyboard */,
-				A4AE6DE01D655FDD0038E4A1 /* Assets.xcassets */,
-				A4AE6DE21D655FDD0038E4A1 /* LaunchScreen.storyboard */,
-				A4AE6DE51D655FDD0038E4A1 /* Info.plist */,
 				A4AE6DD41D655FDD0038E4A1 /* Supporting Files */,
 			);
 			path = commonProj;
@@ -133,7 +139,11 @@
 		A4AE6DD41D655FDD0038E4A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A4AE6DDD1D655FDD0038E4A1 /* Main.storyboard */,
+				A4AE6DE21D655FDD0038E4A1 /* LaunchScreen.storyboard */,
+				A4AE6DE01D655FDD0038E4A1 /* Assets.xcassets */,
 				A4AE6DD51D655FDD0038E4A1 /* main.m */,
+				A4AE6DE51D655FDD0038E4A1 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -154,6 +164,19 @@
 				A4AE6DFB1D655FDE0038E4A1 /* Info.plist */,
 			);
 			path = commonProjUITests;
+			sourceTree = "<group>";
+		};
+		A4AE6E0C1D66EC750038E4A1 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				A4AE6E0D1D66ECDA0038E4A1 /* UITableView+CPAutoSizingCategory.h */,
+				A4AE6E0E1D66ECDA0038E4A1 /* UITableView+CPAutoSizingCategory.m */,
+				A4AE6E101D66ED2B0038E4A1 /* UITableViewCell+CPAutoSizingCategory.h */,
+				A4AE6E111D66ED2B0038E4A1 /* UITableViewCell+CPAutoSizingCategory.m */,
+				A4AE6E131D66FD880038E4A1 /* UIColor+CPSimpleColor.h */,
+				A4AE6E141D66FD880038E4A1 /* UIColor+CPSimpleColor.m */,
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 		B68A170BBC34D454BF9F2A77 /* Frameworks */ = {
@@ -345,9 +368,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4AE6E121D66ED2B0038E4A1 /* UITableViewCell+CPAutoSizingCategory.m in Sources */,
 				A4AE6DDC1D655FDD0038E4A1 /* ViewController.m in Sources */,
 				A4AE6DD91D655FDD0038E4A1 /* AppDelegate.m in Sources */,
 				A4AE6DD61D655FDD0038E4A1 /* main.m in Sources */,
+				A4AE6E151D66FD880038E4A1 /* UIColor+CPSimpleColor.m in Sources */,
+				A4AE6E0F1D66ECDA0038E4A1 /* UITableView+CPAutoSizingCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
