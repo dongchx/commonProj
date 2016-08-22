@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1F923326B6B5EBA6B466B526 /* libPods-commonProj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 772FE16F9DDA9CA1099D93A5 /* libPods-commonProj.a */; };
+		A419102D1D6AE092000BEAC0 /* NSArray+CPArrayCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A419102C1D6AE092000BEAC0 /* NSArray+CPArrayCategory.m */; };
+		A41910301D6AE0BD000BEAC0 /* NSDictionary+CPDictionaryCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A419102F1D6AE0BD000BEAC0 /* NSDictionary+CPDictionaryCategory.m */; };
+		A41910331D6AE1BA000BEAC0 /* UIView+CPFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = A41910321D6AE1BA000BEAC0 /* UIView+CPFrame.m */; };
 		A4AE6DD61D655FDD0038E4A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AE6DD51D655FDD0038E4A1 /* main.m */; };
 		A4AE6DD91D655FDD0038E4A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AE6DD81D655FDD0038E4A1 /* AppDelegate.m */; };
 		A4AE6DDC1D655FDD0038E4A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AE6DDB1D655FDD0038E4A1 /* ViewController.m */; };
@@ -41,6 +44,12 @@
 /* Begin PBXFileReference section */
 		31D30CCE48ED42248E17F934 /* Pods-commonProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-commonProj.debug.xcconfig"; path = "Pods/Target Support Files/Pods-commonProj/Pods-commonProj.debug.xcconfig"; sourceTree = "<group>"; };
 		772FE16F9DDA9CA1099D93A5 /* libPods-commonProj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-commonProj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A419102B1D6AE092000BEAC0 /* NSArray+CPArrayCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+CPArrayCategory.h"; path = "Category/NSArray+CPArrayCategory.h"; sourceTree = "<group>"; };
+		A419102C1D6AE092000BEAC0 /* NSArray+CPArrayCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+CPArrayCategory.m"; path = "Category/NSArray+CPArrayCategory.m"; sourceTree = "<group>"; };
+		A419102E1D6AE0BD000BEAC0 /* NSDictionary+CPDictionaryCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+CPDictionaryCategory.h"; path = "Category/NSDictionary+CPDictionaryCategory.h"; sourceTree = "<group>"; };
+		A419102F1D6AE0BD000BEAC0 /* NSDictionary+CPDictionaryCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+CPDictionaryCategory.m"; path = "Category/NSDictionary+CPDictionaryCategory.m"; sourceTree = "<group>"; };
+		A41910311D6AE1BA000BEAC0 /* UIView+CPFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+CPFrame.h"; path = "Category/UIView+CPFrame.h"; sourceTree = "<group>"; };
+		A41910321D6AE1BA000BEAC0 /* UIView+CPFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+CPFrame.m"; path = "Category/UIView+CPFrame.m"; sourceTree = "<group>"; };
 		A4AE6DD11D655FDD0038E4A1 /* commonProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = commonProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4AE6DD51D655FDD0038E4A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A4AE6DD71D655FDD0038E4A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -175,6 +184,12 @@
 				A4AE6E111D66ED2B0038E4A1 /* UITableViewCell+CPAutoSizingCategory.m */,
 				A4AE6E131D66FD880038E4A1 /* UIColor+CPSimpleColor.h */,
 				A4AE6E141D66FD880038E4A1 /* UIColor+CPSimpleColor.m */,
+				A419102B1D6AE092000BEAC0 /* NSArray+CPArrayCategory.h */,
+				A419102C1D6AE092000BEAC0 /* NSArray+CPArrayCategory.m */,
+				A419102E1D6AE0BD000BEAC0 /* NSDictionary+CPDictionaryCategory.h */,
+				A419102F1D6AE0BD000BEAC0 /* NSDictionary+CPDictionaryCategory.m */,
+				A41910311D6AE1BA000BEAC0 /* UIView+CPFrame.h */,
+				A41910321D6AE1BA000BEAC0 /* UIView+CPFrame.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -374,6 +389,9 @@
 				A4AE6DD61D655FDD0038E4A1 /* main.m in Sources */,
 				A4AE6E151D66FD880038E4A1 /* UIColor+CPSimpleColor.m in Sources */,
 				A4AE6E0F1D66ECDA0038E4A1 /* UITableView+CPAutoSizingCategory.m in Sources */,
+				A419102D1D6AE092000BEAC0 /* NSArray+CPArrayCategory.m in Sources */,
+				A41910301D6AE0BD000BEAC0 /* NSDictionary+CPDictionaryCategory.m in Sources */,
+				A41910331D6AE1BA000BEAC0 /* UIView+CPFrame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
