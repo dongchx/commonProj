@@ -11,6 +11,7 @@
 		A419102D1D6AE092000BEAC0 /* NSArray+CPArrayCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A419102C1D6AE092000BEAC0 /* NSArray+CPArrayCategory.m */; };
 		A41910301D6AE0BD000BEAC0 /* NSDictionary+CPDictionaryCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A419102F1D6AE0BD000BEAC0 /* NSDictionary+CPDictionaryCategory.m */; };
 		A41910331D6AE1BA000BEAC0 /* UIView+CPFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = A41910321D6AE1BA000BEAC0 /* UIView+CPFrame.m */; };
+		A41910361D6AEDB4000BEAC0 /* NSDate+CPDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A41910351D6AEDB4000BEAC0 /* NSDate+CPDateFormatter.m */; };
 		A4AE6DD61D655FDD0038E4A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AE6DD51D655FDD0038E4A1 /* main.m */; };
 		A4AE6DD91D655FDD0038E4A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AE6DD81D655FDD0038E4A1 /* AppDelegate.m */; };
 		A4AE6DDC1D655FDD0038E4A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AE6DDB1D655FDD0038E4A1 /* ViewController.m */; };
@@ -50,6 +51,8 @@
 		A419102F1D6AE0BD000BEAC0 /* NSDictionary+CPDictionaryCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+CPDictionaryCategory.m"; path = "Category/NSDictionary+CPDictionaryCategory.m"; sourceTree = "<group>"; };
 		A41910311D6AE1BA000BEAC0 /* UIView+CPFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+CPFrame.h"; path = "Category/UIView+CPFrame.h"; sourceTree = "<group>"; };
 		A41910321D6AE1BA000BEAC0 /* UIView+CPFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+CPFrame.m"; path = "Category/UIView+CPFrame.m"; sourceTree = "<group>"; };
+		A41910341D6AEDB4000BEAC0 /* NSDate+CPDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+CPDateFormatter.h"; path = "Category/NSDate+CPDateFormatter.h"; sourceTree = "<group>"; };
+		A41910351D6AEDB4000BEAC0 /* NSDate+CPDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+CPDateFormatter.m"; path = "Category/NSDate+CPDateFormatter.m"; sourceTree = "<group>"; };
 		A4AE6DD11D655FDD0038E4A1 /* commonProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = commonProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4AE6DD51D655FDD0038E4A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A4AE6DD71D655FDD0038E4A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -190,6 +193,8 @@
 				A419102F1D6AE0BD000BEAC0 /* NSDictionary+CPDictionaryCategory.m */,
 				A41910311D6AE1BA000BEAC0 /* UIView+CPFrame.h */,
 				A41910321D6AE1BA000BEAC0 /* UIView+CPFrame.m */,
+				A41910341D6AEDB4000BEAC0 /* NSDate+CPDateFormatter.h */,
+				A41910351D6AEDB4000BEAC0 /* NSDate+CPDateFormatter.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 				A4AE6DDC1D655FDD0038E4A1 /* ViewController.m in Sources */,
 				A4AE6DD91D655FDD0038E4A1 /* AppDelegate.m in Sources */,
 				A4AE6DD61D655FDD0038E4A1 /* main.m in Sources */,
+				A41910361D6AEDB4000BEAC0 /* NSDate+CPDateFormatter.m in Sources */,
 				A4AE6E151D66FD880038E4A1 /* UIColor+CPSimpleColor.m in Sources */,
 				A4AE6E0F1D66ECDA0038E4A1 /* UITableView+CPAutoSizingCategory.m in Sources */,
 				A419102D1D6AE092000BEAC0 /* NSArray+CPArrayCategory.m in Sources */,

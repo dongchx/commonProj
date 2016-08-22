@@ -1,12 +1,15 @@
 PODS:
   - Masonry (1.0.1)
+  - NSDate-Extensions (0.0.1)
 
 DEPENDENCIES:
   - Masonry (~> 1.0.1)
+  - NSDate-Extensions (~> 0.0.1)
 
 SPEC CHECKSUMS:
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
+  NSDate-Extensions: cbd68ecf5cf8a150644e184b4521d7734fea5ace
 
-PODFILE CHECKSUM: c90d99085333897e1296adfc854ef557f066448d
+PODFILE CHECKSUM: f441dadc38be291125c4fa79d5f8f9405f5c414e
 
 COCOAPODS: 1.0.1
