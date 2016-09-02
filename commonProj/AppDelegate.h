@@ -10,6 +10,10 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+{
+    UIBackgroundTaskIdentifier bgTaskId;
+}
+
 @property (strong, nonatomic) UIWindow *window;
 
 

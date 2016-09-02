@@ -2,14 +2,12 @@
 //  ViewController.m
 //  commonProj
 //
-//  Created by dongchx on 8/18/16.
+//  Created by dongchx on 8/1/16.
 //  Copyright © 2016 dongchx. All rights reserved.
 //
 
 #import "ViewController.h"
-#import <Masonry/Masonry.h>
 #import "UITableViewCell+CPAutoSizingCategory.h"
-#import "UIColor+CPSimpleColor.h"
 
 @interface ViewController ()
 <UITableViewDelegate, UITableViewDataSource>

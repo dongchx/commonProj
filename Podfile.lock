@@ -1,15 +1,57 @@
 PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - ASIHTTPRequest (1.8.2):
+    - ASIHTTPRequest/ASIWebPageRequest (= 1.8.2)
+    - ASIHTTPRequest/CloudFiles (= 1.8.2)
+    - ASIHTTPRequest/Core (= 1.8.2)
+    - ASIHTTPRequest/S3 (= 1.8.2)
+  - ASIHTTPRequest/ASIWebPageRequest (1.8.2):
+    - ASIHTTPRequest/Core
+  - ASIHTTPRequest/CloudFiles (1.8.2):
+    - ASIHTTPRequest/Core
+  - ASIHTTPRequest/Core (1.8.2):
+    - Reachability
+  - ASIHTTPRequest/S3 (1.8.2):
+    - ASIHTTPRequest/Core
   - Masonry (1.0.1)
   - NSDate-Extensions (0.0.1)
+  - Reachability (3.2)
+  - TPCircularBuffer (1.4)
+  - YYKit (1.0.7):
+    - YYKit/no-arc (= 1.0.7)
+  - YYKit/no-arc (1.0.7)
 
 DEPENDENCIES:
+  - AFNetworking (~> 3.1.0)
+  - ASIHTTPRequest (~> 1.8.2)
   - Masonry (~> 1.0.1)
   - NSDate-Extensions (~> 0.0.1)
+  - TPCircularBuffer (~> 1.4)
+  - YYKit (~> 1.0.7)
 
 SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  ASIHTTPRequest: ec013992946676b7978dcbde6396d57312d21db4
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   NSDate-Extensions: cbd68ecf5cf8a150644e184b4521d7734fea5ace
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  TPCircularBuffer: c0160545b63019adf85231e3de543bbc97cb9041
+  YYKit: 843d1b26e20b82c695790c9a89907eaa1e99907f
 
-PODFILE CHECKSUM: f441dadc38be291125c4fa79d5f8f9405f5c414e
+PODFILE CHECKSUM: da61c43668b6d03c814eb546af8bbb38b85015a2
 
 COCOAPODS: 1.0.1

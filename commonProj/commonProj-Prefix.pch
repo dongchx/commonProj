@@ -1,0 +1,16 @@
+//
+//  commonProj-Prefix.pch
+//  commonProj
+//
+//  Created by dongchx on 8/23/16.
+//  Copyright © 2016 dongchx. All rights reserved.
+//
+
+#ifndef commonProj_Prefix_pch
+#define commonProj_Prefix_pch
+
+#import <Masonry/Masonry.h>
+#import "UIColor+CPSimpleColor.h"
+#import "UIView+CPFrame.h"
+
+#endif /* commonProj_Prefix_pch */
