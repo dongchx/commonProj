@@ -8,6 +8,7 @@
 
 #import "CPHomePageVC.h"
 #import "QRAudioBookPlayVC.h"
+#import "CPThreadViewController.h"
 
 @interface CPHomePageVC ()
 <UITableViewDelegate, UITableViewDataSource>
@@ -52,6 +53,7 @@
     _tableData = @[
                    @"AutoCellHeight",
                    @"QRAudioEngine",
+                   @"CPThread",
                    ];
 }
 
@@ -94,7 +96,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    if (indexPath.row) {
+    if (indexPath.row == 0) {
         // AutoCellHeight
     }
     
@@ -102,6 +104,12 @@
         UIViewController *VC = [[QRAudioBookPlayVC alloc] init];
         [self.navigationController pushViewController:VC animated:YES];
     }
+    
+    if (indexPath.row == 2) {
+        UIViewController *VC = [[CPThreadViewController alloc] init];
+        [self.navigationController pushViewController:VC animated:YES];
+    }
+    
 }
 
 @end // CPHomePageVC

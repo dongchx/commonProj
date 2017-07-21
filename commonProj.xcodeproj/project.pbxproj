@@ -56,6 +56,7 @@
 		A4AE6E121D66ED2B0038E4A1 /* UITableViewCell+CPAutoSizingCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AE6E111D66ED2B0038E4A1 /* UITableViewCell+CPAutoSizingCategory.m */; };
 		A4AE6E151D66FD880038E4A1 /* UIColor+CPSimpleColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AE6E141D66FD880038E4A1 /* UIColor+CPSimpleColor.m */; };
 		A4CD48381F0CDCA200A880D6 /* Rc4Util.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CD48371F0CDCA200A880D6 /* Rc4Util.m */; };
+		A4DDB3C01F21E0980071CA31 /* CPThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DDB3BF1F21E0980071CA31 /* CPThreadViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +185,8 @@
 		A4AE6E141D66FD880038E4A1 /* UIColor+CPSimpleColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CPSimpleColor.m"; path = "Category/UIColor+CPSimpleColor.m"; sourceTree = "<group>"; };
 		A4CD48361F0CDCA200A880D6 /* Rc4Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rc4Util.h; sourceTree = "<group>"; };
 		A4CD48371F0CDCA200A880D6 /* Rc4Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rc4Util.m; sourceTree = "<group>"; };
+		A4DDB3BE1F21E0980071CA31 /* CPThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPThreadViewController.h; path = Thread/CPThreadViewController.h; sourceTree = "<group>"; };
+		A4DDB3BF1F21E0980071CA31 /* CPThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPThreadViewController.m; path = Thread/CPThreadViewController.m; sourceTree = "<group>"; };
 		DC75B0E74DD1EEB56D75BA0D /* Pods-commonProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-commonProj.release.xcconfig"; path = "Pods/Target Support Files/Pods-commonProj/Pods-commonProj.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -369,6 +372,7 @@
 		A4AE6DD31D655FDD0038E4A1 /* commonProj */ = {
 			isa = PBXGroup;
 			children = (
+				A4DDB3BD1F21E0680071CA31 /* Thread */,
 				A490D3061E0941F100E3C4B9 /* QRAudioEngine */,
 				A45BF5C61D7539C600D292E0 /* AudioEngine */,
 				A419103C1D6C4DB7000BEAC0 /* Business */,
@@ -430,6 +434,15 @@
 				A41910351D6AEDB4000BEAC0 /* NSDate+CPDateFormatter.m */,
 			);
 			name = Category;
+			sourceTree = "<group>";
+		};
+		A4DDB3BD1F21E0680071CA31 /* Thread */ = {
+			isa = PBXGroup;
+			children = (
+				A4DDB3BE1F21E0980071CA31 /* CPThreadViewController.h */,
+				A4DDB3BF1F21E0980071CA31 /* CPThreadViewController.m */,
+			);
+			name = Thread;
 			sourceTree = "<group>";
 		};
 		B68A170BBC34D454BF9F2A77 /* Frameworks */ = {
@@ -656,6 +669,7 @@
 				A41910401D6C4E47000BEAC0 /* CPHomePageVC.m in Sources */,
 				A490D3401E0A2A1300E3C4B9 /* DOUAudioRenderer.m in Sources */,
 				A490D33D1E0A2A1300E3C4B9 /* DOUAudioFrequencyAnalyzer.m in Sources */,
+				A4DDB3C01F21E0980071CA31 /* CPThreadViewController.m in Sources */,
 				A490D33C1E0A2A1300E3C4B9 /* DOUAudioFileProvider.m in Sources */,
 				A419102D1D6AE092000BEAC0 /* NSArray+CPArrayCategory.m in Sources */,
 				A490D3471E0A2A1300E3C4B9 /* DOUSimpleHTTPRequest.m in Sources */,
