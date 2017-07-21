@@ -261,6 +261,7 @@ static void BufferCallback(void *inUserData, AudioQueueRef inAQ, AudioQueueBuffe
 		// - End Of File has not been reached yet since we read some packets, so enqueue the buffer we just read into
 		// the audio queue, to be played next
 		// - (packetDescs ? numPackets : 0) means that if there are packet descriptions (which are used only for Variable
+        
 		// BitRate data (VBR)) we'll have to send one for each packet, otherwise zero
 		buffer->mAudioDataByteSize = numBytes;
 		AudioQueueEnqueueBuffer(audioQueue, buffer, (packetDescs ? numPackets : 0), packetDescs);
