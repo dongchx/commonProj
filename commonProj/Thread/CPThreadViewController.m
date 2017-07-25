@@ -280,7 +280,69 @@ void *start(void *data)
     NSLog(@"dispatch_semaphore_continue");
 }
 
+//Operation Queues ：相对 GCD 来说，使用 Operation Queues 会增加一点点额外的开销，
+//但是我们却换来了非常强大的灵活性和功能，我们可以给 operation 之间添加依赖关系、
+//取消一个正在执行的 operation 、暂停和恢复 operation queue 等；
+
+//GCD ：则是一种更轻量级的，以 FIFO 的顺序执行并发任务的方式，使用 GCD 时我们并不关心任务的调度情况，
+//而让系统帮我们自动处理。但是 GCD 的短板也是非常明显的，比如我们想要给任务之间添加依赖关系、
+//取消或者暂停一个正在执行的任务时就会变得非常棘手。
+
+// 参考文献 http://blog.leichunfeng.com/blog/2015/07/29/ios-concurrency-programming-operation-queues/
+
 #pragma mark - NSOperation & NSOperationQueue
+
+- (void)operationQueue
+{
+    
+}
+
+- (NSInvocationOperation *)innocationOperationWithData:(id)data
+{
+    NSInvocationOperation *invocationOp =
+    [[NSInvocationOperation alloc] initWithTarget:self
+                                         selector:@selector(operationTasKmethod:)
+                                           object:data];
+    
+    invocationOp.invocation.selector = @selector(operationTasKmethod:);
+    
+    return invocationOp;
+}
+
+- (NSBlockOperation *)blockOperationwWithData:(id)data
+{
+    NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"Start executing block1, mainThread: %@, currentThread: %@",
+              [NSThread mainThread], [NSThread currentThread]);
+        sleep(3);
+        NSLog(@"Finish executing block1");
+    }];
+    
+    [blockOperation addExecutionBlock:^{
+        NSLog(@"Start executing block2, mainThread: %@, currentThread: %@",
+              [NSThread mainThread], [NSThread currentThread]);
+        sleep(3);
+        NSLog(@"Finish executing block2");
+    }];
+    
+    [blockOperation addExecutionBlock:^{
+        NSLog(@"Start executing block3, mainThread: %@, currentThread: %@",
+              [NSThread mainThread], [NSThread currentThread]);
+        sleep(3);
+        NSLog(@"Finish executing block3");
+    }];
+    
+    return blockOperation;
+}
+
+- (void)operationTasKmethod:(id)data
+{
+    NSLog(@"Start executing %@ with data: %@, mainThread: %@, currentThread: %@",
+          NSStringFromSelector(_cmd), data, [NSThread mainThread], [NSThread currentThread]);
+    sleep(3);
+    NSLog(@"Finish executing %@", NSStringFromSelector(_cmd));
+    // _cmd在Objective-C的方法中表示当前方法的selector，正如同self表示当前方法调用的对象实例;
+}
 
 @end
 
