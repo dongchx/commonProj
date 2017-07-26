@@ -29,6 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self operationQueue];
 }
 
 #pragma mark - subviews
@@ -288,16 +290,27 @@ void *start(void *data)
 //而让系统帮我们自动处理。但是 GCD 的短板也是非常明显的，比如我们想要给任务之间添加依赖关系、
 //取消或者暂停一个正在执行的任务时就会变得非常棘手。
 
+// 看上去Operation Queue是实现复杂任务调度的不二之选
+
 // 参考文献 http://blog.leichunfeng.com/blog/2015/07/29/ios-concurrency-programming-operation-queues/
 
 #pragma mark - NSOperation & NSOperationQueue
 
 - (void)operationQueue
 {
+    // 并非FIFO 受优先级与依赖关系的影响
+    // 串行的dipatch queue是 FIFO
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue setMaxConcurrentOperationCount:1];
     
+    [queue addOperation:[self invocationOperationWithData:nil]];
+    
+    [queue waitUntilAllOperationsAreFinished]; // 阻塞当前线程
+    
+    NSLog(@"OperationQueue All Finished-。=");
 }
 
-- (NSInvocationOperation *)innocationOperationWithData:(id)data
+- (NSInvocationOperation *)invocationOperationWithData:(id)data
 {
     NSInvocationOperation *invocationOp =
     [[NSInvocationOperation alloc] initWithTarget:self
@@ -305,6 +318,17 @@ void *start(void *data)
                                            object:data];
     
     invocationOp.invocation.selector = @selector(operationTasKmethod:);
+    invocationOp.queuePriority =NSOperationQueuePriorityHigh; // 队列优先级
+    
+//    NSInvocationOperation *invocationDependencyOp =
+//    [[NSInvocationOperation alloc] initWithTarget:self
+//                                         selector:@selector(operationTasKmethod:)
+//                                           object:data];
+//    
+//    // 添加依赖
+//    [invocationOp addDependency:invocationDependencyOp];
+//    // 移除依赖
+//    [invocationOp removeDependency:invocationDependencyOp];
     
     return invocationOp;
 }
@@ -343,6 +367,136 @@ void *start(void *data)
     NSLog(@"Finish executing %@", NSStringFromSelector(_cmd));
     // _cmd在Objective-C的方法中表示当前方法的selector，正如同self表示当前方法调用的对象实例;
 }
+
+@end
+
+#pragma mark - 自定义Opreation
+
+//从最低限度上来说，每一个 operation 都应该至少实现以下两个方法：
+//
+//一个自定义的初始化方法；
+//main 方法。
+
+// 非并发Operation
+@interface CPNonConcurrentOperation : NSOperation
+
+@property (nonatomic, strong) id data;
+
+@end
+
+@implementation CPNonConcurrentOperation
+
+- (instancetype)initWithData:(id)data
+{
+    if (self = [super init]) {
+        _data = data;
+    }
+    
+    return self;
+}
+
+// 支持取消操作
+- (void)main
+{
+    @try {
+        if (self.isCancelled) return;
+        
+        NSLog(@"Start executing %@ with data: %@, mainThread: %@, currentThread: %@",
+              NSStringFromSelector(_cmd), self.data, [NSThread mainThread], [NSThread currentThread]);
+        
+        for (NSUInteger i = 0; i < 3; i++) {
+            if (self.isCancelled) return;
+            
+            sleep(1);
+            
+            NSLog(@"Loop %@", @(i + 1));
+        }
+        
+        NSLog(@"Finish executing %@", NSStringFromSelector(_cmd));
+    }
+    @catch(NSException *exception) {
+        NSLog(@"Exception: %@", exception);
+    }
+}
+
+@end
+
+// 并发Operation
+@interface CPConcurrentOperation : NSOperation
+
+@end
+
+@implementation CPConcurrentOperation
+
+@synthesize executing = _executing;
+@synthesize finished  = _finished;
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _executing = NO;
+        _finished  = NO;
+    }
+    return self;
+}
+
+- (BOOL)isConcurrent
+{
+    return YES;
+}
+
+- (BOOL)isExecuting
+{
+    return _executing;
+}
+
+- (BOOL)isFinished {
+    return _finished;
+}
+
+- (void)start
+{
+    // 配置异步任务执行的线程
+    if (self.isCancelled) {
+        [self willChangeValueForKey:@"isFinished"];
+        _finished = YES;
+        [self didChangeValueForKey:@"isFinished"];
+        
+        return;
+    }
+    
+    [self willChangeValueForKey:@"isExecuting"];
+    // 能够并发的关键所在
+    [NSThread detachNewThreadSelector:@selector(main) toTarget:self withObject:nil];
+    _executing = YES;
+    
+    [self didChangeValueForKey:@"isExecuting"];
+}
+
+- (void)main
+{
+    // 在异步执行的operation中 此方法可选
+    @try {
+        NSLog(@"Start executing %@, mainThread: %@, currentThread: %@", NSStringFromSelector(_cmd), [NSThread mainThread], [NSThread currentThread]);
+        
+        sleep(3);
+        
+        [self willChangeValueForKey:@"isExecuting"];
+        _executing = NO;
+        [self didChangeValueForKey:@"isExecuting"];
+        
+        [self willChangeValueForKey:@"isFinished"];
+        _finished  = YES;
+        [self didChangeValueForKey:@"isFinished"];
+        
+        NSLog(@"Finish executing %@", NSStringFromSelector(_cmd));
+    }
+    @catch (NSException *exception) {
+        NSLog(@"Exception: %@", exception);
+    }
+}
+
 
 @end
 
