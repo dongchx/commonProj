@@ -57,6 +57,8 @@
 		A4AE6E151D66FD880038E4A1 /* UIColor+CPSimpleColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AE6E141D66FD880038E4A1 /* UIColor+CPSimpleColor.m */; };
 		A4CD48381F0CDCA200A880D6 /* Rc4Util.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CD48371F0CDCA200A880D6 /* Rc4Util.m */; };
 		A4DDB3C01F21E0980071CA31 /* CPThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DDB3BF1F21E0980071CA31 /* CPThreadViewController.m */; };
+		A4DDB3C41F28A85C0071CA31 /* CPRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DDB3C31F28A85C0071CA31 /* CPRuntimeViewController.m */; };
+		A4DDB3C81F29E1050071CA31 /* CPConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DDB3C71F29E1050071CA31 /* CPConsole.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +189,10 @@
 		A4CD48371F0CDCA200A880D6 /* Rc4Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rc4Util.m; sourceTree = "<group>"; };
 		A4DDB3BE1F21E0980071CA31 /* CPThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPThreadViewController.h; path = Thread/CPThreadViewController.h; sourceTree = "<group>"; };
 		A4DDB3BF1F21E0980071CA31 /* CPThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPThreadViewController.m; path = Thread/CPThreadViewController.m; sourceTree = "<group>"; };
+		A4DDB3C21F28A85C0071CA31 /* CPRuntimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPRuntimeViewController.h; path = Runtime/CPRuntimeViewController.h; sourceTree = "<group>"; };
+		A4DDB3C31F28A85C0071CA31 /* CPRuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPRuntimeViewController.m; path = Runtime/CPRuntimeViewController.m; sourceTree = "<group>"; };
+		A4DDB3C61F29E1050071CA31 /* CPConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPConsole.h; path = CPKit/CPConsole.h; sourceTree = "<group>"; };
+		A4DDB3C71F29E1050071CA31 /* CPConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPConsole.m; path = CPKit/CPConsole.m; sourceTree = "<group>"; };
 		DC75B0E74DD1EEB56D75BA0D /* Pods-commonProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-commonProj.release.xcconfig"; path = "Pods/Target Support Files/Pods-commonProj/Pods-commonProj.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -372,6 +378,8 @@
 		A4AE6DD31D655FDD0038E4A1 /* commonProj */ = {
 			isa = PBXGroup;
 			children = (
+				A4DDB3C51F29E04A0071CA31 /* CPKit */,
+				A4DDB3C11F28A81F0071CA31 /* Runtime */,
 				A4DDB3BD1F21E0680071CA31 /* Thread */,
 				A490D3061E0941F100E3C4B9 /* QRAudioEngine */,
 				A45BF5C61D7539C600D292E0 /* AudioEngine */,
@@ -443,6 +451,24 @@
 				A4DDB3BF1F21E0980071CA31 /* CPThreadViewController.m */,
 			);
 			name = Thread;
+			sourceTree = "<group>";
+		};
+		A4DDB3C11F28A81F0071CA31 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				A4DDB3C21F28A85C0071CA31 /* CPRuntimeViewController.h */,
+				A4DDB3C31F28A85C0071CA31 /* CPRuntimeViewController.m */,
+			);
+			name = Runtime;
+			sourceTree = "<group>";
+		};
+		A4DDB3C51F29E04A0071CA31 /* CPKit */ = {
+			isa = PBXGroup;
+			children = (
+				A4DDB3C61F29E1050071CA31 /* CPConsole.h */,
+				A4DDB3C71F29E1050071CA31 /* CPConsole.m */,
+			);
+			name = CPKit;
 			sourceTree = "<group>";
 		};
 		B68A170BBC34D454BF9F2A77 /* Frameworks */ = {
@@ -670,7 +696,9 @@
 				A490D3401E0A2A1300E3C4B9 /* DOUAudioRenderer.m in Sources */,
 				A490D33D1E0A2A1300E3C4B9 /* DOUAudioFrequencyAnalyzer.m in Sources */,
 				A4DDB3C01F21E0980071CA31 /* CPThreadViewController.m in Sources */,
+				A4DDB3C81F29E1050071CA31 /* CPConsole.m in Sources */,
 				A490D33C1E0A2A1300E3C4B9 /* DOUAudioFileProvider.m in Sources */,
+				A4DDB3C41F28A85C0071CA31 /* CPRuntimeViewController.m in Sources */,
 				A419102D1D6AE092000BEAC0 /* NSArray+CPArrayCategory.m in Sources */,
 				A490D3471E0A2A1300E3C4B9 /* DOUSimpleHTTPRequest.m in Sources */,
 				A490D3391E0A2A1300E3C4B9 /* DOUAudioDecoder.m in Sources */,
