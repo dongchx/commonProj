@@ -12,8 +12,10 @@
 #import "Masonry.h"
 
 @interface CPRuntimeViewController ()
+<UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) CPConsole *console;
+@property (nonatomic, strong) CPConsole     *console;
+@property (nonatomic, strong) UITableView   *tableView;
 
 @end
 
@@ -54,10 +56,47 @@
     CPConsole *console = [[CPConsole alloc] init];
     [parentView addSubview:console];
     
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero
+                                                          style:UITableViewStylePlain];
+    [parentView addSubview:tableView];
+    
     [console mas_makeConstraints:^(MASConstraintMaker *make) {
-        
+        make.right.left.bottom.equalTo(parentView);
+        make.top.equalTo(parentView).multipliedBy(0.5);
     }];
+    
+    self.console    = console;
+    self.tableView  = tableView;
 }
+
+#pragma mark - tableViewDataSource
+
+- (NSArray *)buttonArray
+{
+    return
+    @[@"1", ];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
+    return self.buttonArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // MARK
+    return nil;
+}
+
+- (CGFloat)     tableView:(UITableView *)tableView
+  heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 50.;
+}
+
+#pragma mark - tableViewDelegate
 
 #pragma mark - runtime API
 
