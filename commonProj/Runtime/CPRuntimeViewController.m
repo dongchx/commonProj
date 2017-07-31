@@ -42,6 +42,7 @@
 {
     [super viewDidLoad];
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
     [self setupSubviews:self.view];
 }
 
@@ -59,10 +60,18 @@
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero
                                                           style:UITableViewStylePlain];
     [parentView addSubview:tableView];
+    tableView.delegate      = self;
+    tableView.dataSource    = self;
     
     [console mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.left.bottom.equalTo(parentView);
-        make.top.equalTo(parentView).multipliedBy(0.5);
+        make.top.equalTo(parentView.mas_centerY);
+    }];
+    
+    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.left.equalTo(parentView);
+        make.top.equalTo(parentView).offset(64.);
+        make.bottom.equalTo(parentView.mas_centerY);
     }];
     
     self.console    = console;
@@ -74,7 +83,7 @@
 - (NSArray *)buttonArray
 {
     return
-    @[@"1", ];
+    @[@"changeName", @"addMethod", ];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
@@ -87,7 +96,17 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // MARK
-    return nil;
+    static NSString *reuseId = @"cellReuseId";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseId];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:reuseId];
+    }
+    
+    cell.textLabel.text = [self.buttonArray objectAtIndex:indexPath.row];
+    
+    return cell;
 }
 
 - (CGFloat)     tableView:(UITableView *)tableView
@@ -98,6 +117,19 @@
 
 #pragma mark - tableViewDelegate
 
+- (void)        tableView:(UITableView *)tableView
+  didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.row == 0) {
+        [self changeName];
+    }
+    if (indexPath.row == 1) {
+        [self addMethod];
+    }
+}
+
 #pragma mark - runtime API
 
 - (void)changeName
@@ -105,6 +137,7 @@
     // 动态更改变量的值
     CPRuntimePerson *p = [[CPRuntimePerson alloc] init];
     NSLog(@"oldPropertyName:%@", p.pName);
+    [_console log:[NSString stringWithFormat:@"oldPropertyName:%@", p.pName]];
     
     unsigned int count = 0;
     Ivar *ivar = class_copyIvarList(p.class, &count);
@@ -121,6 +154,7 @@
         }
     }
     NSLog(@"newPropertyName:%@", p.pName);
+    [_console log:[NSString stringWithFormat:@"newPropertyName:%@", p.pName]];
 }
 
 - (void)addMethod
@@ -138,7 +172,10 @@
     }
     else {
         NSLog(@"addMethodFail");
+        [_console log:@"addMethodFail"];
     }
+    
+    [_console log:@"propertyDoSomething"];
     
 }
 

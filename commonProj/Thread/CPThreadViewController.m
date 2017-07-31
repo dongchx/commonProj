@@ -9,11 +9,13 @@
 //  http://www.jianshu.com/p/0b0d9b1f1f19
 
 #import "CPThreadViewController.h"
-
+#import "CPConsole.h"
 #import <pthread.h>
 
-
 @interface CPThreadViewController ()
+
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) CPConsole   *console;
 
 @end
 
@@ -30,14 +32,34 @@
 {
     [super viewDidLoad];
     
-    [self operationQueue];
+//    [self operationQueue];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    [self setupSubviews:self.view];
 }
 
 #pragma mark - subviews
 
 - (void)setupSubviews:(UIView *)parentView
 {
+    [self setupTableViewAndConsole];
+}
+
+- (NSArray<NSString *> *)tableViewStringArray
+{
+    return
+    @[@"operationQueue", ];
+}
+
+- (void)didSelectAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        [self operationQueue];
+        
+    }
     
+    if (indexPath.row == 1) {
+        
+    }
 }
 
 #pragma mark - pthread
@@ -308,6 +330,7 @@ void *start(void *data)
     [queue waitUntilAllOperationsAreFinished]; // 阻塞当前线程
     
     NSLog(@"OperationQueue All Finished-。=");
+    CPCLog(@"OperationQueue All Finished-。=");
 }
 
 - (NSInvocationOperation *)invocationOperationWithData:(id)data
@@ -363,8 +386,11 @@ void *start(void *data)
 {
     NSLog(@"Start executing %@ with data: %@, mainThread: %@, currentThread: %@",
           NSStringFromSelector(_cmd), data, [NSThread mainThread], [NSThread currentThread]);
-    sleep(3);
+    CPCLog(@"Start executing %@ with data: %@, mainThread: %@, currentThread: %@",
+           NSStringFromSelector(_cmd), data, [NSThread mainThread], [NSThread currentThread]);
+    sleep(1);
     NSLog(@"Finish executing %@", NSStringFromSelector(_cmd));
+    CPCLog(@"Finish executing %@", NSStringFromSelector(_cmd));
     // _cmd在Objective-C的方法中表示当前方法的selector，正如同self表示当前方法调用的对象实例;
 }
 

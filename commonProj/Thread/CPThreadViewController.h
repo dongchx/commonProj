@@ -6,8 +6,8 @@
 //  Copyright © 2017 dongchx. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CPViewController.h"
 
-@interface CPThreadViewController : UIViewController
+@interface CPThreadViewController : CPViewController
 
 @end

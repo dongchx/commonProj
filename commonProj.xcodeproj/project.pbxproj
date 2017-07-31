@@ -59,6 +59,7 @@
 		A4DDB3C01F21E0980071CA31 /* CPThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DDB3BF1F21E0980071CA31 /* CPThreadViewController.m */; };
 		A4DDB3C41F28A85C0071CA31 /* CPRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DDB3C31F28A85C0071CA31 /* CPRuntimeViewController.m */; };
 		A4DDB3C81F29E1050071CA31 /* CPConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DDB3C71F29E1050071CA31 /* CPConsole.m */; };
+		A4DDB3D71F2F1CF70071CA31 /* CPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DDB3D61F2F1CF70071CA31 /* CPViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +194,8 @@
 		A4DDB3C31F28A85C0071CA31 /* CPRuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPRuntimeViewController.m; path = Runtime/CPRuntimeViewController.m; sourceTree = "<group>"; };
 		A4DDB3C61F29E1050071CA31 /* CPConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPConsole.h; path = CPKit/CPConsole.h; sourceTree = "<group>"; };
 		A4DDB3C71F29E1050071CA31 /* CPConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPConsole.m; path = CPKit/CPConsole.m; sourceTree = "<group>"; };
+		A4DDB3D51F2F1CF70071CA31 /* CPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPViewController.h; path = CPKit/CPViewController.h; sourceTree = "<group>"; };
+		A4DDB3D61F2F1CF70071CA31 /* CPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPViewController.m; path = CPKit/CPViewController.m; sourceTree = "<group>"; };
 		DC75B0E74DD1EEB56D75BA0D /* Pods-commonProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-commonProj.release.xcconfig"; path = "Pods/Target Support Files/Pods-commonProj/Pods-commonProj.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -467,6 +470,8 @@
 			children = (
 				A4DDB3C61F29E1050071CA31 /* CPConsole.h */,
 				A4DDB3C71F29E1050071CA31 /* CPConsole.m */,
+				A4DDB3D51F2F1CF70071CA31 /* CPViewController.h */,
+				A4DDB3D61F2F1CF70071CA31 /* CPViewController.m */,
 			);
 			name = CPKit;
 			sourceTree = "<group>";
@@ -689,6 +694,7 @@
 				A41910361D6AEDB4000BEAC0 /* NSDate+CPDateFormatter.m in Sources */,
 				A4AE6E151D66FD880038E4A1 /* UIColor+CPSimpleColor.m in Sources */,
 				A45BF5DD1D755CA900D292E0 /* QKFileAudioPlayer.m in Sources */,
+				A4DDB3D71F2F1CF70071CA31 /* CPViewController.m in Sources */,
 				A4AE6E0F1D66ECDA0038E4A1 /* UITableView+CPAutoSizingCategory.m in Sources */,
 				A45BF5E11D75622200D292E0 /* ReachabilityManager.m in Sources */,
 				A490D3481E0A2A1300E3C4B9 /* NSData+DOUMappedFile.m in Sources */,
