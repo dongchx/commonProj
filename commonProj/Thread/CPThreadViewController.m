@@ -62,6 +62,13 @@
     }
 }
 
+#pragma mark - RunLoop
+
+- (void)runLoopAPIField
+{
+    
+}
+
 #pragma mark - pthread
 
 - (void)createPthread
@@ -70,6 +77,12 @@
     
     // 创建一个线程并执行
     pthread_create(&thread, NULL, start, NULL);
+    
+    // 主线程
+    pthread_main_np();
+    
+    // 当前线程
+    pthread_self();
     
 }
 
