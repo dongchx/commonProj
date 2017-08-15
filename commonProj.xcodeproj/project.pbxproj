@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18DAF7431F4316BA00692A1E /* UILabel+CPFitLines.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DAF7421F4316BA00692A1E /* UILabel+CPFitLines.m */; };
+		18DAF7461F431C4A00692A1E /* NSString+CPSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DAF7451F431C4A00692A1E /* NSString+CPSize.m */; };
+		18DAF7491F431E1B00692A1E /* CPMultiLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DAF7481F431E1B00692A1E /* CPMultiLabelViewController.m */; };
+		18DAF74C1F4321BF00692A1E /* CPMultiTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DAF74B1F4321BF00692A1E /* CPMultiTextView.m */; };
+		18DAF74F1F4329F500692A1E /* CPMultiTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DAF74E1F4329F500692A1E /* CPMultiTextCell.m */; };
 		1F923326B6B5EBA6B466B526 /* libPods-commonProj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 772FE16F9DDA9CA1099D93A5 /* libPods-commonProj.a */; };
 		A419102D1D6AE092000BEAC0 /* NSArray+CPArrayCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A419102C1D6AE092000BEAC0 /* NSArray+CPArrayCategory.m */; };
 		A41910301D6AE0BD000BEAC0 /* NSDictionary+CPDictionaryCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A419102F1D6AE0BD000BEAC0 /* NSDictionary+CPDictionaryCategory.m */; };
@@ -80,6 +85,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18DAF7411F4316BA00692A1E /* UILabel+CPFitLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UILabel+CPFitLines.h"; path = "CPKit/UILabel+CPFitLines.h"; sourceTree = "<group>"; };
+		18DAF7421F4316BA00692A1E /* UILabel+CPFitLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UILabel+CPFitLines.m"; path = "CPKit/UILabel+CPFitLines.m"; sourceTree = "<group>"; };
+		18DAF7441F431C4A00692A1E /* NSString+CPSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+CPSize.h"; path = "CPKit/NSString+CPSize.h"; sourceTree = "<group>"; };
+		18DAF7451F431C4A00692A1E /* NSString+CPSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+CPSize.m"; path = "CPKit/NSString+CPSize.m"; sourceTree = "<group>"; };
+		18DAF7471F431E1B00692A1E /* CPMultiLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPMultiLabelViewController.h; path = CPMultiLabel/CPMultiLabelViewController.h; sourceTree = "<group>"; };
+		18DAF7481F431E1B00692A1E /* CPMultiLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPMultiLabelViewController.m; path = CPMultiLabel/CPMultiLabelViewController.m; sourceTree = "<group>"; };
+		18DAF74A1F4321BF00692A1E /* CPMultiTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPMultiTextView.h; path = CPKit/CPMultiTextView.h; sourceTree = "<group>"; };
+		18DAF74B1F4321BF00692A1E /* CPMultiTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPMultiTextView.m; path = CPKit/CPMultiTextView.m; sourceTree = "<group>"; };
+		18DAF74D1F4329F500692A1E /* CPMultiTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPMultiTextCell.h; path = CPMultiLabel/CPMultiTextCell.h; sourceTree = "<group>"; };
+		18DAF74E1F4329F500692A1E /* CPMultiTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPMultiTextCell.m; path = CPMultiLabel/CPMultiTextCell.m; sourceTree = "<group>"; };
 		31D30CCE48ED42248E17F934 /* Pods-commonProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-commonProj.debug.xcconfig"; path = "Pods/Target Support Files/Pods-commonProj/Pods-commonProj.debug.xcconfig"; sourceTree = "<group>"; };
 		772FE16F9DDA9CA1099D93A5 /* libPods-commonProj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-commonProj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A419102B1D6AE092000BEAC0 /* NSArray+CPArrayCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+CPArrayCategory.h"; path = "Category/NSArray+CPArrayCategory.h"; sourceTree = "<group>"; };
@@ -225,6 +240,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18DAF7401F43122C00692A1E /* CPMultiLabel */ = {
+			isa = PBXGroup;
+			children = (
+				18DAF7471F431E1B00692A1E /* CPMultiLabelViewController.h */,
+				18DAF7481F431E1B00692A1E /* CPMultiLabelViewController.m */,
+				18DAF74A1F4321BF00692A1E /* CPMultiTextView.h */,
+				18DAF74B1F4321BF00692A1E /* CPMultiTextView.m */,
+				18DAF74D1F4329F500692A1E /* CPMultiTextCell.h */,
+				18DAF74E1F4329F500692A1E /* CPMultiTextCell.m */,
+			);
+			name = CPMultiLabel;
+			sourceTree = "<group>";
+		};
 		7436CEC6A20BDD8186CDDFF2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +409,7 @@
 		A4AE6DD31D655FDD0038E4A1 /* commonProj */ = {
 			isa = PBXGroup;
 			children = (
+				18DAF7401F43122C00692A1E /* CPMultiLabel */,
 				A4DDB3C51F29E04A0071CA31 /* CPKit */,
 				A4DDB3C11F28A81F0071CA31 /* Runtime */,
 				A4DDB3BD1F21E0680071CA31 /* Thread */,
@@ -472,6 +501,10 @@
 				A4DDB3C71F29E1050071CA31 /* CPConsole.m */,
 				A4DDB3D51F2F1CF70071CA31 /* CPViewController.h */,
 				A4DDB3D61F2F1CF70071CA31 /* CPViewController.m */,
+				18DAF7411F4316BA00692A1E /* UILabel+CPFitLines.h */,
+				18DAF7421F4316BA00692A1E /* UILabel+CPFitLines.m */,
+				18DAF7441F431C4A00692A1E /* NSString+CPSize.h */,
+				18DAF7451F431C4A00692A1E /* NSString+CPSize.m */,
 			);
 			name = CPKit;
 			sourceTree = "<group>";
@@ -690,12 +723,14 @@
 				A4AE6DD61D655FDD0038E4A1 /* main.m in Sources */,
 				A45BF5DE1D755CA900D292E0 /* QKNetAudioPlayer.m in Sources */,
 				A490D3451E0A2A1300E3C4B9 /* DOUEAGLView.m in Sources */,
+				18DAF74F1F4329F500692A1E /* CPMultiTextCell.m in Sources */,
 				A45BF5E51D756C1800D292E0 /* CPAudioEngine.m in Sources */,
 				A41910361D6AEDB4000BEAC0 /* NSDate+CPDateFormatter.m in Sources */,
 				A4AE6E151D66FD880038E4A1 /* UIColor+CPSimpleColor.m in Sources */,
 				A45BF5DD1D755CA900D292E0 /* QKFileAudioPlayer.m in Sources */,
 				A4DDB3D71F2F1CF70071CA31 /* CPViewController.m in Sources */,
 				A4AE6E0F1D66ECDA0038E4A1 /* UITableView+CPAutoSizingCategory.m in Sources */,
+				18DAF7431F4316BA00692A1E /* UILabel+CPFitLines.m in Sources */,
 				A45BF5E11D75622200D292E0 /* ReachabilityManager.m in Sources */,
 				A490D3481E0A2A1300E3C4B9 /* NSData+DOUMappedFile.m in Sources */,
 				A41910401D6C4E47000BEAC0 /* CPHomePageVC.m in Sources */,
@@ -706,6 +741,7 @@
 				A490D33C1E0A2A1300E3C4B9 /* DOUAudioFileProvider.m in Sources */,
 				A4DDB3C41F28A85C0071CA31 /* CPRuntimeViewController.m in Sources */,
 				A419102D1D6AE092000BEAC0 /* NSArray+CPArrayCategory.m in Sources */,
+				18DAF74C1F4321BF00692A1E /* CPMultiTextView.m in Sources */,
 				A490D3471E0A2A1300E3C4B9 /* DOUSimpleHTTPRequest.m in Sources */,
 				A490D3391E0A2A1300E3C4B9 /* DOUAudioDecoder.m in Sources */,
 				A490D3441E0A2A1300E3C4B9 /* DOUAudioVisualizer.m in Sources */,
@@ -713,8 +749,10 @@
 				A490D34E1E0A352F00E3C4B9 /* QRAudioBookEngine.m in Sources */,
 				A490D34B1E0A2EB300E3C4B9 /* QRAudioTrack.m in Sources */,
 				A41910301D6AE0BD000BEAC0 /* NSDictionary+CPDictionaryCategory.m in Sources */,
+				18DAF7461F431C4A00692A1E /* NSString+CPSize.m in Sources */,
 				A41910331D6AE1BA000BEAC0 /* UIView+CPFrame.m in Sources */,
 				A490D36F1E0CD12300E3C4B9 /* QRAudioBookPlayView.m in Sources */,
+				18DAF7491F431E1B00692A1E /* CPMultiLabelViewController.m in Sources */,
 				A490D3371E0A2A1300E3C4B9 /* DOUAudioAnalyzer.m in Sources */,
 				A490D3721E0D13DE00E3C4B9 /* QRAudioTrack+Provider.m in Sources */,
 				A490D33F1E0A2A1300E3C4B9 /* DOUAudioPlaybackItem.m in Sources */,

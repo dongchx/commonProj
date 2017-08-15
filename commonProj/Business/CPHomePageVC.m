@@ -10,6 +10,7 @@
 #import "QRAudioBookPlayVC.h"
 #import "CPThreadViewController.h"
 #import "CPRuntimeViewController.h"
+#import "CPMultiLabelViewController.h"
 
 @interface CPHomePageVC ()
 <UITableViewDelegate, UITableViewDataSource>
@@ -56,6 +57,7 @@
                    @"QRAudioEngine",
                    @"CPThread",
                    @"CPRuntime",
+                   @"CPLabel",
                    ];
 }
 
@@ -114,6 +116,11 @@
     
     if (indexPath.row == 3) {
         UIViewController *VC = [[CPRuntimeViewController alloc] init];
+        [self.navigationController pushViewController:VC animated:YES];
+    }
+    
+    if (indexPath.row == 4) {
+        UIViewController *VC = [[CPMultiLabelViewController alloc] init];
         [self.navigationController pushViewController:VC animated:YES];
     }
     
