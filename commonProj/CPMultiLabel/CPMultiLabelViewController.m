@@ -40,7 +40,7 @@ static NSString *cellReuseId = @"cellReuserId";
         CPMultiTextCellModel *model =
         [[CPMultiTextCellModel alloc] initWithContent:contentArr[i]
                                          contentLines:3
-                                               isOpen:YES];
+                                               isOpen:NO];
         
         [self.dataSource addObject:model];
     }
@@ -72,7 +72,7 @@ static NSString *cellReuseId = @"cellReuserId";
     
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(parentView)
-        .insets(UIEdgeInsetsMake(kCPNaviBarHeight, 0, 0, 0));
+        .insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
     tableView.backgroundColor = [UIColor greenColor];
@@ -100,10 +100,10 @@ static NSString *cellReuseId = @"cellReuserId";
         if (cellModel.isOpen) {
             cellModel.contentLines = 0;  //0,不限制行数
         }else{
-            cellModel.contentLines = 3;     //3,3行
+            cellModel.contentLines = 3;   //3,3行
         }
-        NSInteger newxtRow = (indexPath.row + 1) >= [self.dataSource count] - 1 ?  [self.dataSource count] - 1 :(indexPath.row + 1);
-        [strongSelf.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:newxtRow  inSection:indexPath.section]] withRowAnimation:UITableViewRowAnimationFade];
+        [strongSelf.tableView reloadRowsAtIndexPaths:@[indexPath]
+                                    withRowAnimation:UITableViewRowAnimationFade];
     }];
     
     [cell setCellModel:[self.dataSource objectAtIndex:indexPath.row]];
@@ -121,4 +121,22 @@ static NSString *cellReuseId = @"cellReuserId";
 
 #pragma mark - tableViewDelegate
 
+- (BOOL)            tableView:(UITableView *)tableView
+shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+

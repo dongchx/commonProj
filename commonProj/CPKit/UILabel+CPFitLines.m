@@ -9,6 +9,7 @@
 #import "UILabel+CPFitLines.h"
 #import "NSString+CPSize.h"
 #import <objc/runtime.h>
+#import <CoreText/CoreText.h>
 
 @implementation UILabel (CPFitLines)
 
@@ -53,9 +54,11 @@
                                  constrainedWidth:self.cp_containtsWidth
                                  isLimitedToLines:&isLimitedToLines];
     
+    CGFloat defaultMargin = ceil(self.font.lineHeight - self.font.pointSize);
+    CGFloat lineSpacing = self.cp_lineSpacing - defaultMargin;
     //单行的情况
     if (fabs(textSize.height - self.font.lineHeight) < 0.00001f) {
-        self.cp_lineSpacing = 0.0f;
+        lineSpacing = 0;
     }
     
     //设置文字的属性
@@ -63,8 +66,9 @@
     [[NSMutableAttributedString alloc] initWithString:self.text];
     
     NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setLineSpacing:self.cp_lineSpacing];
+    [paragraphStyle setLineSpacing:lineSpacing];
     paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
+    paragraphStyle.alignment = NSTextAlignmentJustified;
     
     [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle
                              range:NSMakeRange(0, [self.text length])];
@@ -74,10 +78,82 @@
     [attributedString addAttribute:NSFontAttributeName value:self.font
                              range:NSMakeRange(0, [self.text length])];
     
-    
     [self setAttributedText:attributedString];
     self.bounds = CGRectMake(0, 0, textSize.width, textSize.height);
     return isLimitedToLines;
+}
+
+//- (void)setLineBreakByTruncatingLastLineMiddle:(NSInteger)numberOfLines
+//{
+//    self.numberOfLines = numberOfLines;
+//    if ( self.numberOfLines <= 0 ) {
+//        [self cp_adjustTextToFitLines:numberOfLines];
+//        return;
+//    }
+//    NSArray *separatedLines = [self getSeparatedLinesArray];
+//    
+//    NSMutableString *limitedText = [NSMutableString string];
+//    if ( separatedLines.count >= self.numberOfLines ) {
+//        
+//        for (int i = 0 ; i < self.numberOfLines; i++) {
+//            if ( i == self.numberOfLines - 1) {
+//                UILabel *lastLineLabel =
+//                [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width/2, MAXFLOAT)];
+//                lastLineLabel.text = separatedLines[self.numberOfLines - 1];
+//                
+//                NSArray *subSeparatedLines = [lastLineLabel getSeparatedLinesArray];
+//                NSString *lastLineText = [subSeparatedLines firstObject];
+//                NSInteger lastLineTextCount = lastLineText.length;
+//                [limitedText appendString:[NSString stringWithFormat:@"%@...",
+//                                           [lastLineText substringToIndex:lastLineTextCount]]];
+//            }else{
+//                [limitedText appendString:separatedLines[i]];
+//            }
+//        }
+//        
+//        
+//    }else{
+//        [limitedText appendString:self.text];
+//    }
+//    
+//    self.text = limitedText;
+//    [self cp_adjustTextToFitLines:numberOfLines];
+//}
+//
+//- (NSArray *)getSeparatedLinesArray
+//{
+//    NSString *text = self.text;
+//    UIFont   *font = self.font;
+//    CGRect   rect  = self.bounds;
+//    
+//    CTFontRef myFont =
+//    CTFontCreateWithName((__bridge CFStringRef)([font fontName]),
+//                         [font pointSize], NULL);
+//    
+//    NSMutableAttributedString *attStr =
+//    [[NSMutableAttributedString alloc] initWithString:text];
+//    [attStr addAttribute:(NSString *)kCTFontAttributeName
+//                   value:(__bridge id)myFont
+//                   range:NSMakeRange(0, attStr.length)];
+//    
+//    CTFramesetterRef frameSetter =
+//    CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)attStr);
+//    CGMutablePathRef path = CGPathCreateMutable();
+//    CGPathAddRect(path, NULL, CGRectMake(0,0,rect.size.width,MAXFLOAT));
+//    CTFrameRef frame =
+//    CTFramesetterCreateFrame(frameSetter, CFRangeMake(0, 0), path, NULL);
+//    
+//    NSArray *lines = (__bridge NSArray *)CTFrameGetLines(frame);
+//    NSMutableArray *linesArray = [[NSMutableArray alloc]init];
+//    for (id line in lines){
+//        CTLineRef lineRef = (__bridge CTLineRef )line;
+//        CFRange lineRange = CTLineGetStringRange(lineRef);
+//        NSRange range = NSMakeRange(lineRange.location, lineRange.length);
+//        NSString *lineString = [text substringWithRange:range];
+//        [linesArray addObject:lineString];
+//    }
+//    
+//    return (NSArray *)linesArray;
 }
 
 @end

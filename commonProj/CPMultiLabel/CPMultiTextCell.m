@@ -36,9 +36,9 @@
 
 @interface CPMultiTextCell ()
 {
-    CPMultiTextView *_mainView;
+    UILabel                 *_label;
     CPMultiTextCellModel    *_model;
-    UIButton        *_openContentBtn;
+    UIButton                *_openContentBtn;
 }
 
 @end
@@ -49,7 +49,7 @@
               reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        
+        [self setupSubviews:self.contentView];
     }
     
     return self;
@@ -59,17 +59,22 @@
 
 - (void)setupSubviews:(UIView *)parentView
 {
-    _mainView = [[CPMultiTextView alloc] init];
-    [parentView addSubview:_mainView];
+    _label = [[UILabel alloc] init];
+    [parentView addSubview:_label];
+    _label.font = [UIFont systemFontOfSize:kCPMultiTextViewFont];
+    _label.cp_containtsWidth = SCREEN_WIDTH;
+    _label.cp_lineSpacing = kCPMultiTextViewLineSpaceing;
+    _label.layer.borderWidth = 1.;
+    _label.layer.borderColor = [UIColor redColor].CGColor;
     
     _openContentBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [parentView addSubview:_openContentBtn];
     
     [_openContentBtn addTarget:self
-                        action:@selector(openContent)
+                        action:@selector(openContent:)
               forControlEvents:UIControlEventTouchUpInside];
     
-    [_mainView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(parentView);
     }];
     
@@ -83,9 +88,10 @@
 - (void)setCellModel:(CPMultiTextCellModel *)model
 {
     _model = model;
-    _mainView.label.text = model.content;
+    _label.text = model.content;
     BOOL isLimitedToLines =
-    [_mainView.label cp_adjustTextToFitLines:model.contentLines];
+    [_label cp_adjustTextToFitLines:model.contentLines];
+    _openContentBtn.selected = _model.isOpen;
     
     if (isLimitedToLines) {
         // 箭头
@@ -101,25 +107,26 @@
     [model.content textSizeWithFont:[UIFont systemFontOfSize:kCPMultiTextViewFont]
                       numberOfLines:model.contentLines
                         lineSpacing:kCPMultiTextViewLineSpaceing
-                   constrainedWidth:SCREEN_WIDTH - 30
+                   constrainedWidth:SCREEN_WIDTH
                    isLimitedToLines:&isLimitedToLines];
     
-    CGFloat height = textSize.height;
-//    if (!isLimitedToLines && (model.contentLines != 0)) {
-//        height -= 25;
-//    }
+    CGFloat height = textSize.height + 25;
+    if (!isLimitedToLines && (model.contentLines != 0)) {
+        height -= 25;
+    }
     return height;
 }
 
 #pragma mark - tapAction
 
-- (void)openContent
+- (void)openContent:(UIButton *)btn
 {
     if (self.openContentBlock) {
-        _openContentBtn.selected = _openContentBtn.selected;
-        _model.isOpen = _openContentBtn.selected;
+        btn.selected = !btn.selected;
+        _model.isOpen = btn.selected;
+        NSLog(@"%@", @(_model.isOpen));
         self.openContentBlock(_model);
-//        [self layoutSubviewsWithModel:self.cellModel];
+        [self setCellModel:_model];
     }
 }
 

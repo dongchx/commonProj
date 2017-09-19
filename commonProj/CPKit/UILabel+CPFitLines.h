@@ -19,4 +19,7 @@
  */
 - (BOOL)cp_adjustTextToFitLines:(NSInteger)numberOfLines;
 
+//
+//- (void)setLineBreakByTruncatingLastLineMiddle:(NSInteger)numberOfLines;
+
 @end

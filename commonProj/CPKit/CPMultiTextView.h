@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #define kCPMultiTextViewFont 15
-#define kCPMultiTextViewLineSpaceing 4
+#define kCPMultiTextViewLineSpaceing 10
 
 @interface CPMultiTextView : UIView
 

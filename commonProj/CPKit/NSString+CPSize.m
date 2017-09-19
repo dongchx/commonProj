@@ -27,11 +27,20 @@
     if (self.length == 0) {
         return CGSizeZero;
     }
+    
+    CGFloat defaultMargin = ceil(font.lineHeight - font.pointSize);
+    lineSpacing -= defaultMargin;
+    
     CGFloat oneLineHeight = font.lineHeight;
-    CGSize textSize = [self boundingRectWithSize:CGSizeMake(constrainedWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil].size;
+    CGSize textSize =
+    [self boundingRectWithSize:CGSizeMake(constrainedWidth, MAXFLOAT)
+                       options:NSStringDrawingUsesLineFragmentOrigin
+                    attributes:@{NSFontAttributeName:font}
+                       context:nil].size;
     
     CGFloat rows = textSize.height / oneLineHeight;
     CGFloat realHeight = oneLineHeight;
+    
     // 0 不限制行数
     if (numberOfLines == 0) {
         if (rows >= 1) {
