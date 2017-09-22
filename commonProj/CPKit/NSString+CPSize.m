@@ -10,8 +10,8 @@
 
 @implementation NSString (CPSize)
 
-- (CGSize)textSizeWithFont:(UIFont*)font{
-    
+- (CGSize)textSizeWithFont:(UIFont*)font
+{
     return [self sizeWithAttributes:@{NSFontAttributeName:font}];
 }
 
@@ -22,8 +22,8 @@
              numberOfLines:(NSInteger)numberOfLines
                lineSpacing:(CGFloat)lineSpacing
           constrainedWidth:(CGFloat)constrainedWidth
-          isLimitedToLines:(BOOL *)isLimitedToLines{
-    
+          isLimitedToLines:(BOOL *)isLimitedToLines
+{
     if (self.length == 0) {
         return CGSizeZero;
     }

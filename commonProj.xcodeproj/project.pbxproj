@@ -25,6 +25,8 @@
 		A45BF5DE1D755CA900D292E0 /* QKNetAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A45BF5DA1D755CA900D292E0 /* QKNetAudioPlayer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A45BF5E11D75622200D292E0 /* ReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A45BF5E01D75622200D292E0 /* ReachabilityManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A45BF5E51D756C1800D292E0 /* CPAudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = A45BF5E41D756C1800D292E0 /* CPAudioEngine.m */; };
+		A4823C671F74FBD30010375B /* CPCoreGraphicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4823C661F74FBD30010375B /* CPCoreGraphicsViewController.m */; };
+		A4823C6A1F7510B60010375B /* CPCoreGraphicsTView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4823C691F7510B60010375B /* CPCoreGraphicsTView.m */; };
 		A48C7F3A1DB8704200ED6313 /* DDNetAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A48C7F391DB8704200ED6313 /* DDNetAudioPlayer.m */; };
 		A490D3371E0A2A1300E3C4B9 /* DOUAudioAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = A490D3111E0A2A1300E3C4B9 /* DOUAudioAnalyzer.m */; };
 		A490D3381E0A2A1300E3C4B9 /* DOUAudioAnalyzer+Default.m in Sources */ = {isa = PBXBuildFile; fileRef = A490D3131E0A2A1300E3C4B9 /* DOUAudioAnalyzer+Default.m */; };
@@ -126,6 +128,10 @@
 		A45BF5E21D7562A900D292E0 /* PublicConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PublicConfig.h; path = AudioEngine/PublicConfig.h; sourceTree = "<group>"; };
 		A45BF5E31D756C1800D292E0 /* CPAudioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPAudioEngine.h; path = AudioEngine/CPAudioEngine.h; sourceTree = "<group>"; };
 		A45BF5E41D756C1800D292E0 /* CPAudioEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPAudioEngine.m; path = AudioEngine/CPAudioEngine.m; sourceTree = "<group>"; };
+		A4823C651F74FBD30010375B /* CPCoreGraphicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPCoreGraphicsViewController.h; path = CoreGraphics/CPCoreGraphicsViewController.h; sourceTree = "<group>"; };
+		A4823C661F74FBD30010375B /* CPCoreGraphicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPCoreGraphicsViewController.m; path = CoreGraphics/CPCoreGraphicsViewController.m; sourceTree = "<group>"; };
+		A4823C681F7510B60010375B /* CPCoreGraphicsTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPCoreGraphicsTView.h; path = CoreGraphics/CPCoreGraphicsTView.h; sourceTree = "<group>"; };
+		A4823C691F7510B60010375B /* CPCoreGraphicsTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPCoreGraphicsTView.m; path = CoreGraphics/CPCoreGraphicsTView.m; sourceTree = "<group>"; };
 		A48C7F381DB8704200ED6313 /* DDNetAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDNetAudioPlayer.h; path = AudioEngine/AudioPlayer/DDNetAudioPlayer.h; sourceTree = "<group>"; };
 		A48C7F391DB8704200ED6313 /* DDNetAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDNetAudioPlayer.m; path = AudioEngine/AudioPlayer/DDNetAudioPlayer.m; sourceTree = "<group>"; };
 		A490D30F1E0A2A1300E3C4B9 /* DOUAudioAnalyzer_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOUAudioAnalyzer_Private.h; path = QRAudioEngine/lib/DOUAudioAnalyzer_Private.h; sourceTree = "<group>"; };
@@ -308,6 +314,17 @@
 			name = AudioPlayer;
 			sourceTree = "<group>";
 		};
+		A4823C641F74E8C80010375B /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				A4823C651F74FBD30010375B /* CPCoreGraphicsViewController.h */,
+				A4823C661F74FBD30010375B /* CPCoreGraphicsViewController.m */,
+				A4823C681F7510B60010375B /* CPCoreGraphicsTView.h */,
+				A4823C691F7510B60010375B /* CPCoreGraphicsTView.m */,
+			);
+			name = CoreGraphics;
+			sourceTree = "<group>";
+		};
 		A490D3061E0941F100E3C4B9 /* QRAudioEngine */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +426,7 @@
 		A4AE6DD31D655FDD0038E4A1 /* commonProj */ = {
 			isa = PBXGroup;
 			children = (
+				A4823C641F74E8C80010375B /* CoreGraphics */,
 				18DAF7401F43122C00692A1E /* CPMultiLabel */,
 				A4DDB3C51F29E04A0071CA31 /* CPKit */,
 				A4DDB3C11F28A81F0071CA31 /* Runtime */,
@@ -724,11 +742,13 @@
 				A45BF5DE1D755CA900D292E0 /* QKNetAudioPlayer.m in Sources */,
 				A490D3451E0A2A1300E3C4B9 /* DOUEAGLView.m in Sources */,
 				18DAF74F1F4329F500692A1E /* CPMultiTextCell.m in Sources */,
+				A4823C671F74FBD30010375B /* CPCoreGraphicsViewController.m in Sources */,
 				A45BF5E51D756C1800D292E0 /* CPAudioEngine.m in Sources */,
 				A41910361D6AEDB4000BEAC0 /* NSDate+CPDateFormatter.m in Sources */,
 				A4AE6E151D66FD880038E4A1 /* UIColor+CPSimpleColor.m in Sources */,
 				A45BF5DD1D755CA900D292E0 /* QKFileAudioPlayer.m in Sources */,
 				A4DDB3D71F2F1CF70071CA31 /* CPViewController.m in Sources */,
+				A4823C6A1F7510B60010375B /* CPCoreGraphicsTView.m in Sources */,
 				A4AE6E0F1D66ECDA0038E4A1 /* UITableView+CPAutoSizingCategory.m in Sources */,
 				18DAF7431F4316BA00692A1E /* UILabel+CPFitLines.m in Sources */,
 				A45BF5E11D75622200D292E0 /* ReachabilityManager.m in Sources */,

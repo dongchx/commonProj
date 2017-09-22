@@ -62,15 +62,16 @@
     }
     
     //设置文字的属性
-    NSMutableAttributedString * attributedString =
+    NSMutableAttributedString *attributedString =
     [[NSMutableAttributedString alloc] initWithString:self.text];
     
-    NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineSpacing:lineSpacing];
     paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
     paragraphStyle.alignment = NSTextAlignmentJustified;
     
-    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle
+    [attributedString addAttribute:NSParagraphStyleAttributeName
+                             value:paragraphStyle
                              range:NSMakeRange(0, [self.text length])];
     [attributedString addAttribute:NSForegroundColorAttributeName
                              value:self.textColor
@@ -80,6 +81,54 @@
     
     [self setAttributedText:attributedString];
     self.bounds = CGRectMake(0, 0, textSize.width, textSize.height);
+    return isLimitedToLines;
+}
+
+- (BOOL)cp_adjustAttributedTextToFitLines:(NSInteger)numberOfLines
+{
+    if (!self.attributedText || self.attributedText.length == 0) {
+        return NO;
+    }
+    
+    self.numberOfLines = numberOfLines;
+    BOOL isLimitedToLines = NO;
+    
+    CGSize textSize =
+    [self.attributedText.string textSizeWithFont:self.font
+                                   numberOfLines:self.numberOfLines
+                                     lineSpacing:self.cp_lineSpacing
+                                constrainedWidth:self.cp_containtsWidth
+                                isLimitedToLines:&isLimitedToLines];
+    
+    CGFloat defaultMargin = ceil(self.font.lineHeight - self.font.pointSize);
+    CGFloat lineSpacing = self.cp_lineSpacing - defaultMargin;
+    //单行的情况
+    if (fabs(textSize.height - self.font.lineHeight) < 0.00001f) {
+        lineSpacing = 0;
+    }
+    
+    // 添加属性
+    NSMutableAttributedString *attributedString =
+    [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineSpacing = lineSpacing;
+    paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
+    paragraphStyle.alignment = NSTextAlignmentJustified;
+    
+    [attributedString addAttribute:NSParagraphStyleAttributeName
+                             value:paragraphStyle
+                             range:NSMakeRange(0, self.attributedText.length)];
+    [attributedString addAttribute:NSForegroundColorAttributeName
+                             value:self.textColor
+                             range:NSMakeRange(0, self.attributedText.length)];
+    [attributedString addAttribute:NSFontAttributeName
+                             value:self.font
+                             range:NSMakeRange(0, self.attributedText.length)];
+    
+    [self setAttributedText:attributedString];
+    self.bounds = CGRectMake(0, 0, textSize.width, textSize.height);
+    
     return isLimitedToLines;
 }
 
@@ -154,6 +203,6 @@
 //    }
 //    
 //    return (NSArray *)linesArray;
-}
+//}
 
 @end

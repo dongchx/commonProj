@@ -18,6 +18,7 @@
  @return 文本是否被numberOfLines限制
  */
 - (BOOL)cp_adjustTextToFitLines:(NSInteger)numberOfLines;
+- (BOOL)cp_adjustAttributedTextToFitLines:(NSInteger)numberOfLines;
 
 //
 //- (void)setLineBreakByTruncatingLastLineMiddle:(NSInteger)numberOfLines;
