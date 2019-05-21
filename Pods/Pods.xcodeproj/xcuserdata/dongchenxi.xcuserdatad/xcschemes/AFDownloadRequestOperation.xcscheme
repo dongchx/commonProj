@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B3C760711B585710870482548EF04B3F'
-               BlueprintName = 'AFDownloadRequestOperation'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libAFDownloadRequestOperation.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "453E324DD79D171B40B93191FDE82737"
+               BuildableName = "libAFDownloadRequestOperation.a"
+               BlueprintName = "AFDownloadRequestOperation"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

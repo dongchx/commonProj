@@ -44,8 +44,8 @@ PODS:
     - libextobjc/EXTScope (= 0.4.1)
     - libextobjc/EXTSelectorChecking (= 0.4.1)
     - libextobjc/EXTSynthesize (= 0.4.1)
-    - libextobjc/NSInvocation+EXT (= 0.4.1)
-    - libextobjc/NSMethodSignature+EXT (= 0.4.1)
+    - "libextobjc/NSInvocation+EXT (= 0.4.1)"
+    - "libextobjc/NSMethodSignature+EXT (= 0.4.1)"
     - libextobjc/RuntimeExtensions (= 0.4.1)
     - libextobjc/UmbrellaHeader (= 0.4.1)
   - libextobjc/EXTADT (0.4.1):
@@ -64,15 +64,19 @@ PODS:
     - libextobjc/RuntimeExtensions
   - libextobjc/EXTSynthesize (0.4.1):
     - libextobjc/RuntimeExtensions
-  - libextobjc/NSInvocation+EXT (0.4.1):
+  - "libextobjc/NSInvocation+EXT (0.4.1)":
     - libextobjc/RuntimeExtensions
-  - libextobjc/NSMethodSignature+EXT (0.4.1):
+  - "libextobjc/NSMethodSignature+EXT (0.4.1)":
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
   - libextobjc/UmbrellaHeader (0.4.1)
   - Masonry (1.0.2)
   - NSDate-Extensions (0.0.1)
   - Reachability (3.2)
+  - RXPromise (1.0.5)
+  - SDWebImage (5.0.0):
+    - SDWebImage/Core (= 5.0.0)
+  - SDWebImage/Core (5.0.0)
   - TPCircularBuffer (1.4)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
@@ -85,8 +89,24 @@ DEPENDENCIES:
   - libextobjc (~> 0.4.1)
   - Masonry (~> 1.0.1)
   - NSDate-Extensions (~> 0.0.1)
+  - RXPromise (~> 1.0.5)
+  - SDWebImage (~> 5.0.0)
   - TPCircularBuffer (~> 1.4)
   - YYKit (~> 1.0.7)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFDownloadRequestOperation
+    - AFNetworking
+    - ASIHTTPRequest
+    - libextobjc
+    - Masonry
+    - NSDate-Extensions
+    - Reachability
+    - RXPromise
+    - SDWebImage
+    - TPCircularBuffer
+    - YYKit
 
 SPEC CHECKSUMS:
   AFDownloadRequestOperation: 748a1643423e1ddb23f2178f778087d4f0ae8ac7
@@ -96,9 +116,11 @@ SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   NSDate-Extensions: cbd68ecf5cf8a150644e184b4521d7734fea5ace
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  RXPromise: b1e6d6d747db2e0dc53f11ba2a0fbff2456d25e5
+  SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
   TPCircularBuffer: c0160545b63019adf85231e3de543bbc97cb9041
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 8a9862be6b6719a84046749d43ddb8bdca40b6f7
+PODFILE CHECKSUM: 43f0e393d80bb159bfe968961ae27b5f12b9edc4
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.6.1

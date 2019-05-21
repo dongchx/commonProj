@@ -1,4 +1,4 @@
-platform:ios, '7.0'
+platform:ios, '9.0'
 
 def pods
 	pod 'Masonry', '~> 1.0.1'
@@ -7,8 +7,10 @@ def pods
 	pod 'YYKit', '~> 1.0.7'
 	pod 'TPCircularBuffer', '~> 1.4'
 	pod 'ASIHTTPRequest', '~> 1.8.2'
-    pod 'AFDownloadRequestOperation', '~> 2.0.1'
-    pod 'libextobjc', '~> 0.4.1'
+	pod 'AFDownloadRequestOperation', '~> 2.0.1'
+	pod 'libextobjc', '~> 0.4.1'
+	pod 'RXPromise', '~> 1.0.5'
+	pod 'SDWebImage', '~> 5.0.0'
 end
 
 target 'commonProj' do

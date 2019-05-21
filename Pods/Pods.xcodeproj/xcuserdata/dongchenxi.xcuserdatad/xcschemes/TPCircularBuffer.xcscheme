@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '26C6E73C54D4BBBF4C065FA2984DCAA6'
-               BlueprintName = 'TPCircularBuffer'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libTPCircularBuffer.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BE3EB13DF1162ACE362F1DA535061D3D"
+               BuildableName = "libTPCircularBuffer.a"
+               BlueprintName = "TPCircularBuffer"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

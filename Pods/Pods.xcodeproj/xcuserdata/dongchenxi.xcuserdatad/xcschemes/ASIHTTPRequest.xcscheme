@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'AC320BF3B09D57852C0D12961DFE9A76'
-               BlueprintName = 'ASIHTTPRequest'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libASIHTTPRequest.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C637CC4C2733B0A095FE4AEACAECCD65"
+               BuildableName = "libASIHTTPRequest.a"
+               BlueprintName = "ASIHTTPRequest"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

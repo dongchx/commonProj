@@ -20,6 +20,7 @@
 		A45BF5DE1D755CA900D292E0 /* QKNetAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A45BF5DA1D755CA900D292E0 /* QKNetAudioPlayer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A45BF5E11D75622200D292E0 /* ReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A45BF5E01D75622200D292E0 /* ReachabilityManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A45BF5E51D756C1800D292E0 /* CPAudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = A45BF5E41D756C1800D292E0 /* CPAudioEngine.m */; };
+		A45FAE9E21D100EC00C4CC0F /* CPWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45FAE9D21D100EC00C4CC0F /* CPWebViewController.m */; };
 		A48C7F3A1DB8704200ED6313 /* DDNetAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A48C7F391DB8704200ED6313 /* DDNetAudioPlayer.m */; };
 		A490D3371E0A2A1300E3C4B9 /* DOUAudioAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = A490D3111E0A2A1300E3C4B9 /* DOUAudioAnalyzer.m */; };
 		A490D3381E0A2A1300E3C4B9 /* DOUAudioAnalyzer+Default.m in Sources */ = {isa = PBXBuildFile; fileRef = A490D3131E0A2A1300E3C4B9 /* DOUAudioAnalyzer+Default.m */; };
@@ -108,6 +109,8 @@
 		A45BF5E21D7562A900D292E0 /* PublicConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PublicConfig.h; path = AudioEngine/PublicConfig.h; sourceTree = "<group>"; };
 		A45BF5E31D756C1800D292E0 /* CPAudioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPAudioEngine.h; path = AudioEngine/CPAudioEngine.h; sourceTree = "<group>"; };
 		A45BF5E41D756C1800D292E0 /* CPAudioEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPAudioEngine.m; path = AudioEngine/CPAudioEngine.m; sourceTree = "<group>"; };
+		A45FAE9C21D100EC00C4CC0F /* CPWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CPWebViewController.h; path = Web/CPWebViewController.h; sourceTree = "<group>"; };
+		A45FAE9D21D100EC00C4CC0F /* CPWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CPWebViewController.m; path = Web/CPWebViewController.m; sourceTree = "<group>"; };
 		A48C7F381DB8704200ED6313 /* DDNetAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDNetAudioPlayer.h; path = AudioEngine/AudioPlayer/DDNetAudioPlayer.h; sourceTree = "<group>"; };
 		A48C7F391DB8704200ED6313 /* DDNetAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDNetAudioPlayer.m; path = AudioEngine/AudioPlayer/DDNetAudioPlayer.m; sourceTree = "<group>"; };
 		A490D30F1E0A2A1300E3C4B9 /* DOUAudioAnalyzer_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOUAudioAnalyzer_Private.h; path = QRAudioEngine/lib/DOUAudioAnalyzer_Private.h; sourceTree = "<group>"; };
@@ -271,6 +274,15 @@
 			name = AudioPlayer;
 			sourceTree = "<group>";
 		};
+		A45FAE9B21D1009D00C4CC0F /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				A45FAE9C21D100EC00C4CC0F /* CPWebViewController.h */,
+				A45FAE9D21D100EC00C4CC0F /* CPWebViewController.m */,
+			);
+			name = Web;
+			sourceTree = "<group>";
+		};
 		A490D3061E0941F100E3C4B9 /* QRAudioEngine */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +384,7 @@
 		A4AE6DD31D655FDD0038E4A1 /* commonProj */ = {
 			isa = PBXGroup;
 			children = (
+				A45FAE9B21D1009D00C4CC0F /* Web */,
 				A4DDB3BD1F21E0680071CA31 /* Thread */,
 				A490D3061E0941F100E3C4B9 /* QRAudioEngine */,
 				A45BF5C61D7539C600D292E0 /* AudioEngine */,
@@ -464,8 +477,6 @@
 				A4AE6DCD1D655FDD0038E4A1 /* Sources */,
 				A4AE6DCE1D655FDD0038E4A1 /* Frameworks */,
 				A4AE6DCF1D655FDD0038E4A1 /* Resources */,
-				7A2A27128107CE1918D6586E /* [CP] Embed Pods Frameworks */,
-				99F4B546768B2F640EF8A290 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -523,7 +534,8 @@
 				TargetAttributes = {
 					A4AE6DD01D655FDD0038E4A1 = {
 						CreatedOnToolsVersion = 7.3.1;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 99GU44VAES;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -594,43 +606,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-commonProj-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		7A2A27128107CE1918D6586E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-commonProj/Pods-commonProj-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		99F4B546768B2F640EF8A290 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-commonProj/Pods-commonProj-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -650,6 +635,7 @@
 				A45BF5D21D755AF200D292E0 /* AudioEngineHelper.m in Sources */,
 				A490D3381E0A2A1300E3C4B9 /* DOUAudioAnalyzer+Default.m in Sources */,
 				A48C7F3A1DB8704200ED6313 /* DDNetAudioPlayer.m in Sources */,
+				A45FAE9E21D100EC00C4CC0F /* CPWebViewController.m in Sources */,
 				A4AE6E121D66ED2B0038E4A1 /* UITableViewCell+CPAutoSizingCategory.m in Sources */,
 				A490D3461E0A2A1300E3C4B9 /* DOUMPMediaLibraryAssetLoader.m in Sources */,
 				A490D33E1E0A2A1300E3C4B9 /* DOUAudioLPCM.m in Sources */,
@@ -831,14 +817,15 @@
 			baseConfigurationReference = 31D30CCE48ED42248E17F934 /* Pods-commonProj.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: QQ Readrer (2Z92FJ4737)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: QQ Readrer (2Z92FJ4737)";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 99GU44VAES;
 				INFOPLIST_FILE = commonProj/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.QQReader.dongchx.commonProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = UniversalDev;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -847,12 +834,15 @@
 			baseConfigurationReference = DC75B0E74DD1EEB56D75BA0D /* Pods-commonProj.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 99GU44VAES;
 				INFOPLIST_FILE = commonProj/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.QQReader.dongchx.commonProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
