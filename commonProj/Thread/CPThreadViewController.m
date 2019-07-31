@@ -30,7 +30,8 @@
 {
     [super viewDidLoad];
     
-    [self operationQueue];
+//    [self operationQueue];
+    [self dispatchsyncblock];
 }
 
 #pragma mark - subviews
@@ -280,6 +281,18 @@ void *start(void *data)
     
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     NSLog(@"dispatch_semaphore_continue");
+}
+
+- (void)dispatchsyncblock
+{
+    dispatch_queue_t q = dispatch_queue_create("com.dongchenxi.baidu", NULL);
+    
+    // 在自身队列对自身进行同步dispatch
+    dispatch_async(q, ^{
+        dispatch_sync(q, ^{
+            NSLog(@"dispatch_sync");
+        });
+    });
 }
 
 //Operation Queues ：相对 GCD 来说，使用 Operation Queues 会增加一点点额外的开销，

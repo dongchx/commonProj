@@ -13,6 +13,8 @@
 		A41910331D6AE1BA000BEAC0 /* UIView+CPFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = A41910321D6AE1BA000BEAC0 /* UIView+CPFrame.m */; };
 		A41910361D6AEDB4000BEAC0 /* NSDate+CPDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = A41910351D6AEDB4000BEAC0 /* NSDate+CPDateFormatter.m */; };
 		A41910401D6C4E47000BEAC0 /* CPHomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A419103F1D6C4E47000BEAC0 /* CPHomePageVC.m */; };
+		A42EA12522E845F5005B72A0 /* CPMemoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA12422E845F5005B72A0 /* CPMemoryViewController.m */; };
+		A42EA3C122E97A06005B72A0 /* CPBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A42EA3C022E97A06005B72A0 /* CPBlockViewController.m */; };
 		A45BF5D21D755AF200D292E0 /* AudioEngineHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A45BF5CF1D755AF200D292E0 /* AudioEngineHelper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A45BF5D31D755AF200D292E0 /* QKAudioTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = A45BF5D11D755AF200D292E0 /* QKAudioTrack.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A45BF5DC1D755CA900D292E0 /* QKBaseAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A45BF5D61D755CA800D292E0 /* QKBaseAudioPlayer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -91,6 +93,10 @@
 		A419103E1D6C4E47000BEAC0 /* CPHomePageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPHomePageVC.h; path = Business/CPHomePageVC.h; sourceTree = "<group>"; };
 		A419103F1D6C4E47000BEAC0 /* CPHomePageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPHomePageVC.m; path = Business/CPHomePageVC.m; sourceTree = "<group>"; };
 		A41910441D6C501C000BEAC0 /* commonProj-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "commonProj-Prefix.pch"; sourceTree = "<group>"; };
+		A42EA12322E845F5005B72A0 /* CPMemoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPMemoryViewController.h; sourceTree = "<group>"; };
+		A42EA12422E845F5005B72A0 /* CPMemoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPMemoryViewController.m; sourceTree = "<group>"; };
+		A42EA3BF22E97A06005B72A0 /* CPBlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPBlockViewController.h; sourceTree = "<group>"; };
+		A42EA3C022E97A06005B72A0 /* CPBlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPBlockViewController.m; sourceTree = "<group>"; };
 		A45BF5CC1D755AF200D292E0 /* AudioCommonDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioCommonDefine.h; path = AudioEngine/Common/AudioCommonDefine.h; sourceTree = "<group>"; };
 		A45BF5CD1D755AF200D292E0 /* AudioCommonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioCommonUtil.h; path = AudioEngine/Common/AudioCommonUtil.h; sourceTree = "<group>"; };
 		A45BF5CE1D755AF200D292E0 /* AudioEngineHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioEngineHelper.h; path = AudioEngine/Common/AudioEngineHelper.h; sourceTree = "<group>"; };
@@ -239,6 +245,24 @@
 			name = Business;
 			sourceTree = "<group>";
 		};
+		A42EA12222E84587005B72A0 /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				A42EA12322E845F5005B72A0 /* CPMemoryViewController.h */,
+				A42EA12422E845F5005B72A0 /* CPMemoryViewController.m */,
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
+		A42EA3BE22E97933005B72A0 /* Block */ = {
+			isa = PBXGroup;
+			children = (
+				A42EA3BF22E97A06005B72A0 /* CPBlockViewController.h */,
+				A42EA3C022E97A06005B72A0 /* CPBlockViewController.m */,
+			);
+			path = Block;
+			sourceTree = "<group>";
+		};
 		A45BF5C61D7539C600D292E0 /* AudioEngine */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +408,8 @@
 		A4AE6DD31D655FDD0038E4A1 /* commonProj */ = {
 			isa = PBXGroup;
 			children = (
+				A42EA3BE22E97933005B72A0 /* Block */,
+				A42EA12222E84587005B72A0 /* Memory */,
 				A45FAE9B21D1009D00C4CC0F /* Web */,
 				A4DDB3BD1F21E0680071CA31 /* Thread */,
 				A490D3061E0941F100E3C4B9 /* QRAudioEngine */,
@@ -557,6 +583,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -649,6 +676,8 @@
 				A41910361D6AEDB4000BEAC0 /* NSDate+CPDateFormatter.m in Sources */,
 				A4AE6E151D66FD880038E4A1 /* UIColor+CPSimpleColor.m in Sources */,
 				A45BF5DD1D755CA900D292E0 /* QKFileAudioPlayer.m in Sources */,
+				A42EA12522E845F5005B72A0 /* CPMemoryViewController.m in Sources */,
+				A42EA3C122E97A06005B72A0 /* CPBlockViewController.m in Sources */,
 				A4AE6E0F1D66ECDA0038E4A1 /* UITableView+CPAutoSizingCategory.m in Sources */,
 				A45BF5E11D75622200D292E0 /* ReachabilityManager.m in Sources */,
 				A490D3481E0A2A1300E3C4B9 /* NSData+DOUMappedFile.m in Sources */,
@@ -822,6 +851,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 99GU44VAES;
 				INFOPLIST_FILE = commonProj/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.QQReader.dongchx.commonProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -839,6 +869,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 99GU44VAES;
 				INFOPLIST_FILE = commonProj/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.QQReader.dongchx.commonProj;
 				PRODUCT_NAME = "$(TARGET_NAME)";

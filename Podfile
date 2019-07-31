@@ -11,6 +11,7 @@ def pods
 	pod 'libextobjc', '~> 0.4.1'
 	pod 'RXPromise', '~> 1.0.5'
 	pod 'SDWebImage', '~> 5.0.0'
+	pod 'Aspects', '~> 1.4.1'
 end
 
 target 'commonProj' do

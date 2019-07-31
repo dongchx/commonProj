@@ -35,6 +35,7 @@ PODS:
     - Reachability
   - ASIHTTPRequest/S3 (1.8.2):
     - ASIHTTPRequest/Core
+  - Aspects (1.4.1)
   - libextobjc (0.4.1):
     - libextobjc/EXTADT (= 0.4.1)
     - libextobjc/EXTConcreteProtocol (= 0.4.1)
@@ -86,6 +87,7 @@ DEPENDENCIES:
   - AFDownloadRequestOperation (~> 2.0.1)
   - AFNetworking (~> 2.0)
   - ASIHTTPRequest (~> 1.8.2)
+  - Aspects (~> 1.4.1)
   - libextobjc (~> 0.4.1)
   - Masonry (~> 1.0.1)
   - NSDate-Extensions (~> 0.0.1)
@@ -99,6 +101,7 @@ SPEC REPOS:
     - AFDownloadRequestOperation
     - AFNetworking
     - ASIHTTPRequest
+    - Aspects
     - libextobjc
     - Masonry
     - NSDate-Extensions
@@ -112,6 +115,7 @@ SPEC CHECKSUMS:
   AFDownloadRequestOperation: 748a1643423e1ddb23f2178f778087d4f0ae8ac7
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   ASIHTTPRequest: ec013992946676b7978dcbde6396d57312d21db4
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   NSDate-Extensions: cbd68ecf5cf8a150644e184b4521d7734fea5ace
@@ -121,6 +125,6 @@ SPEC CHECKSUMS:
   TPCircularBuffer: c0160545b63019adf85231e3de543bbc97cb9041
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 43f0e393d80bb159bfe968961ae27b5f12b9edc4
+PODFILE CHECKSUM: 06ac35192fe7fa1b4c117a1e0ea95c720cc73aa7
 
 COCOAPODS: 1.6.1

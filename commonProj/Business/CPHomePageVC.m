@@ -10,6 +10,8 @@
 #import "QRAudioBookPlayVC.h"
 #import "CPThreadViewController.h"
 #import "CPWebViewController.h"
+#import "CPMemoryViewController.h"
+#import "CPBlockViewController.h"
 
 @interface CPHomePageVC ()
 <UITableViewDelegate, UITableViewDataSource>
@@ -56,6 +58,9 @@
                    @"QRAudioEngine",
                    @"CPThread",
                    @"CPWebView",
+                   @"CPMemory",
+                   @"CPBlock",
+                   @"CPRuntime",
                    ];
 }
 
@@ -117,6 +122,15 @@
         [self.navigationController pushViewController:VC animated:YES];
     }
     
+    else if (indexPath.row == 4) {
+        UIViewController *VC = [[CPMemoryViewController alloc] init];
+        [self.navigationController pushViewController:VC animated:YES];
+    }
+    
+    else if (indexPath.row == 5) {
+        UIViewController *VC = [[CPBlockViewController alloc] init];
+        [self.navigationController pushViewController:VC animated:YES];
+    }
 }
 
 @end // CPHomePageVC
