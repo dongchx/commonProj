@@ -10,6 +10,8 @@
 
 @interface CPMemoryViewController ()
 
+@property (nonatomic, copy) NSMutableArray *array;
+
 @end
 
 @implementation CPMemoryViewController
@@ -22,7 +24,9 @@ extern void _objc_autoreleasePoolPrint(void);
     [super viewDidLoad];
     
     [self setupSubviews:self.view];
-    [self test];
+//    [self test];
+//    [self testB];
+    [self testCopy];
 }
 
 #pragma mark - subviews
@@ -76,6 +80,39 @@ extern void _objc_autoreleasePoolPrint(void);
         NSLog(@"retain count = %lu", _objc_rootRetainCount(obj));
     }
     
+}
+
+//- (void)testA
+//{
+//    id __weak wObj = [self testObj];
+//    NSLog(@"A = %@", wObj);
+//}
+
+//- (void)testB
+//{
+//    id __weak wObj= @[@"1"];
+//     NSLog(@"B = %@", wObj);
+//}
+
+//- (void)testCD
+//{
+//    id __weak cObj = [self testObj];
+//    id __weak dObj = @"hello world";
+//
+//    NSLog(@"C = %@", cObj);
+//    NSLog(@"D = %@", dObj);
+//}
+
+//- (id)testObj
+//{
+//    return @"hello world";
+//}
+
+- (void)testCopy
+{
+    self.array = [NSMutableArray array];
+    
+    [self.array addObject:@"1"];
 }
 
 @end
