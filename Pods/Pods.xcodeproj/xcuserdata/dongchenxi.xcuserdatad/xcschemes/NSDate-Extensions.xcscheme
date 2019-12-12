@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D460645CD440C08131E6B185B750A8F0"
+               BlueprintIdentifier = "A12B574F997CA6E479BF45C2ABF7F198"
                BuildableName = "libNSDate-Extensions.a"
                BlueprintName = "NSDate-Extensions"
                ReferencedContainer = "container:Pods.xcodeproj">

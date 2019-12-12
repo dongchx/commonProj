@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B6C3EAFED3202076FDBC1FE60D51DDEB"
+               BlueprintIdentifier = "764BC610A244A97FDE21A58897EB4BD1"
                BuildableName = "libRXPromise.a"
                BlueprintName = "RXPromise"
                ReferencedContainer = "container:Pods.xcodeproj">

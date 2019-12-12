@@ -1,25 +1,25 @@
 PODS:
   - AFDownloadRequestOperation (2.0.1):
     - AFNetworking (~> 2.0)
-  - AFNetworking (2.6.3):
-    - AFNetworking/NSURLConnection (= 2.6.3)
-    - AFNetworking/NSURLSession (= 2.6.3)
-    - AFNetworking/Reachability (= 2.6.3)
-    - AFNetworking/Security (= 2.6.3)
-    - AFNetworking/Serialization (= 2.6.3)
-    - AFNetworking/UIKit (= 2.6.3)
-  - AFNetworking/NSURLConnection (2.6.3):
+  - AFNetworking (2.7.0):
+    - AFNetworking/NSURLConnection (= 2.7.0)
+    - AFNetworking/NSURLSession (= 2.7.0)
+    - AFNetworking/Reachability (= 2.7.0)
+    - AFNetworking/Security (= 2.7.0)
+    - AFNetworking/Serialization (= 2.7.0)
+    - AFNetworking/UIKit (= 2.7.0)
+  - AFNetworking/NSURLConnection (2.7.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.6.3):
+  - AFNetworking/NSURLSession (2.7.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.6.3)
-  - AFNetworking/Security (2.6.3)
-  - AFNetworking/Serialization (2.6.3)
-  - AFNetworking/UIKit (2.6.3):
+  - AFNetworking/Reachability (2.7.0)
+  - AFNetworking/Security (2.7.0)
+  - AFNetworking/Serialization (2.7.0)
+  - AFNetworking/UIKit (2.7.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - ASIHTTPRequest (1.8.2):
@@ -75,10 +75,10 @@ PODS:
   - NSDate-Extensions (0.0.1)
   - Reachability (3.2)
   - RXPromise (1.0.5)
-  - SDWebImage (5.0.0):
-    - SDWebImage/Core (= 5.0.0)
-  - SDWebImage/Core (5.0.0)
-  - TPCircularBuffer (1.4)
+  - SDWebImage (5.0.6):
+    - SDWebImage/Core (= 5.0.6)
+  - SDWebImage/Core (5.0.6)
+  - TPCircularBuffer (1.6.1)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -113,7 +113,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFDownloadRequestOperation: 748a1643423e1ddb23f2178f778087d4f0ae8ac7
-  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  AFNetworking: 8dd5f9b9691e09186393069a12cc3b5ed7c8b511
   ASIHTTPRequest: ec013992946676b7978dcbde6396d57312d21db4
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
@@ -121,10 +121,10 @@ SPEC CHECKSUMS:
   NSDate-Extensions: cbd68ecf5cf8a150644e184b4521d7734fea5ace
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   RXPromise: b1e6d6d747db2e0dc53f11ba2a0fbff2456d25e5
-  SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
-  TPCircularBuffer: c0160545b63019adf85231e3de543bbc97cb9041
+  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  TPCircularBuffer: c13243556527551c4d320709c7b14a6d20cdc30a
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
 PODFILE CHECKSUM: 06ac35192fe7fa1b4c117a1e0ea95c720cc73aa7
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.5

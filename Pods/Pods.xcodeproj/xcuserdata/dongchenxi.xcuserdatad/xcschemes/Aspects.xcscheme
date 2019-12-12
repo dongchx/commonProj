@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "631354CCFC4C0C0735A5C5B193ED6D48"
+               BlueprintIdentifier = "C6539905C4D50932B36244650B93C79B"
                BuildableName = "libAspects.a"
                BlueprintName = "Aspects"
                ReferencedContainer = "container:Pods.xcodeproj">
