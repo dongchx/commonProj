@@ -1,3 +1,6 @@
+source 'https://cdn.cocoapods.org/'
+source 'ssh://gerrit.zhenguanyu.com:29418/ios-specs'
+
 platform:ios, '9.0'
 
 def pods
@@ -12,6 +15,7 @@ def pods
 	pod 'RXPromise', '~> 1.0.5'
 	pod 'SDWebImage', '~> 5.0.0'
 	pod 'Aspects', '~> 1.4.1'
+  pod 'TTBSPatch', '1.0.0'
 end
 
 target 'commonProj' do

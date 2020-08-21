@@ -1,0 +1,1 @@
+../../../TTBSPatch/Classes/bspatch.h

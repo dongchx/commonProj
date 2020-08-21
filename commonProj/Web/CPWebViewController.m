@@ -8,6 +8,12 @@
 
 #import "CPWebViewController.h"
 #import <WebKit/WebKit.h>
+#import <TTBSPatch/TTBSPatch.h>
+//#import <mach/mach_init.h>
+//#import <mach/mach_host.h>
+//#import <mach/host_info.h>
+#include <sys/sysctl.h>
+#import "CPProc.h"
 
 @interface CPWebViewController () <UIWebViewDelegate, WKUIDelegate, WKNavigationDelegate>
 //@property (nonatomic, strong) UIWebView *webView;
@@ -26,10 +32,22 @@
 {
     if (self = [super init]) {
         [self setupSubviews:self.view];
-        [self registerNotifications];
+//        [self registerNotifications];
+//        [self patch];
     }
     
     return self;
+}
+
+- (void)patch {
+    NSString *file = @"/Users/dongchenxi/Desktop";
+    NSString *o = [file stringByAppendingPathComponent:@"app.1000098.6"];
+    NSString *p = [file stringByAppendingPathComponent:@"app.1000098.7_"];
+    NSString *t = [file stringByAppendingPathComponent:@"t"];
+    
+    [TTBSPatch patchWithOriginFilePath:o
+                        targetFilePath:t
+                         patchFilePath:p];
 }
 
 - (void)registerNotifications {
@@ -78,8 +96,8 @@
     _webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:config];
     _webView.UIDelegate = self;
     _webView.navigationDelegate = self;
-    _webView.backgroundColor = [UIColor clearColor];
-    _webView.opaque = NO;
+    _webView.backgroundColor = [UIColor lightGrayColor];
+//    _webView.opaque = NO;
     _webView.hidden = NO;
     _webView.scrollView.bounces = NO;
     _webView.frame = parentView.bounds;
@@ -111,20 +129,44 @@
 //      forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)reload {
-    NSURL *url = [NSURL URLWithString:@"http://m.baidu.com"];
-    NSURL *burl = [NSURL URLWithString:@"about:blank"];
+- (void)reload:(NSString *)urlStr {
+    NSURL *url = [NSURL URLWithString:urlStr];
+//    NSURL *burl = [NSURL URLWithString:@"about:blank"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    NSURLRequest *breq = [NSURLRequest requestWithURL:burl];
+//    NSURLRequest *breq = [NSURLRequest requestWithURL:burl];
     
-    [_webView loadRequest:breq];
+//    [_webView loadRequest:breq];
     [_webView loadRequest:request];
 }
 
 - (void)handleRedBtnAction:(id)sender {
-    _webView.hidden = YES;
-    [_webView removeFromSuperview];
-    [self reload];
+//    _webView.hidden = YES;
+//    [_webView removeFromSuperview];
+//    [self reload:@"http://www.google.com"];
+    
+    // sysctl ------------------------------------------------------------
+    size_t bufSize = 0;
+    int mib[4] = {CTL_KERN, KERN_PROC, KERN_PROC_ALL, 0};
+    if(sysctl(mib, 4, NULL, &bufSize, NULL, 0) < 0) {
+        return;
+    }
+    bufSize *= 2;
+    struct kinfo_proc *kp = (struct kinfo_proc *)malloc(bufSize);
+    int ret = sysctl(mib, 4, kp, &bufSize, NULL, 0);
+    unsigned long count = bufSize / sizeof(struct kinfo_proc);
+    
+//    // NSProcessInfo -----------------------------------------------------
+//    NSProcessInfo *procinfo = [NSProcessInfo processInfo];
+    
+    for (int i = 0; i < count; i++) {
+        CPProc *proc =  [[CPProc alloc] initWithKinfo:&kp[i]];
+        NSLog(@"[debug] n  %@, %d, %d, %llu", proc.name, proc.pid, proc.ppid, (proc->basic.resident_size/8)/1024);
+//        NSLog(@"[debug] pn %@", proc.pName);
+    }
+    
+    free(kp);
+    
+    NSLog(@"[debug]");
 }
 
 - (void)handleGreBtnAction:(id)sender {
@@ -132,7 +174,7 @@
     if (!_webView.superview) {
         [self.view addSubview:_webView];
     }
-    [self reload];
+    [self reload:@"http://m.baidu.com/"];
 }
 
 #pragma mark - webview delegate

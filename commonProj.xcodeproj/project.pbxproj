@@ -60,6 +60,8 @@
 		A4AE6E151D66FD880038E4A1 /* UIColor+CPSimpleColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A4AE6E141D66FD880038E4A1 /* UIColor+CPSimpleColor.m */; };
 		A4CD48381F0CDCA200A880D6 /* Rc4Util.m in Sources */ = {isa = PBXBuildFile; fileRef = A4CD48371F0CDCA200A880D6 /* Rc4Util.m */; };
 		A4DDB3C01F21E0980071CA31 /* CPThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DDB3BF1F21E0980071CA31 /* CPThreadViewController.m */; };
+		A4F1295B24EFACA700822E74 /* CPProc.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F1295A24EFACA700822E74 /* CPProc.m */; };
+		A4F1295D24EFE2EC00822E74 /* task.xml in Resources */ = {isa = PBXBuildFile; fileRef = A4F1295C24EFE2EC00822E74 /* task.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +198,9 @@
 		A4CD48371F0CDCA200A880D6 /* Rc4Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rc4Util.m; sourceTree = "<group>"; };
 		A4DDB3BE1F21E0980071CA31 /* CPThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPThreadViewController.h; path = Thread/CPThreadViewController.h; sourceTree = "<group>"; };
 		A4DDB3BF1F21E0980071CA31 /* CPThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPThreadViewController.m; path = Thread/CPThreadViewController.m; sourceTree = "<group>"; };
+		A4F1295924EFACA700822E74 /* CPProc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPProc.h; sourceTree = "<group>"; };
+		A4F1295A24EFACA700822E74 /* CPProc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPProc.m; sourceTree = "<group>"; };
+		A4F1295C24EFE2EC00822E74 /* task.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = task.xml; sourceTree = "<group>"; };
 		DC75B0E74DD1EEB56D75BA0D /* Pods-commonProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-commonProj.release.xcconfig"; path = "Pods/Target Support Files/Pods-commonProj/Pods-commonProj.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -250,6 +255,8 @@
 			children = (
 				A42EA12322E845F5005B72A0 /* CPMemoryViewController.h */,
 				A42EA12422E845F5005B72A0 /* CPMemoryViewController.m */,
+				A4F1295924EFACA700822E74 /* CPProc.h */,
+				A4F1295A24EFACA700822E74 /* CPProc.m */,
 			);
 			path = Memory;
 			sourceTree = "<group>";
@@ -408,6 +415,7 @@
 		A4AE6DD31D655FDD0038E4A1 /* commonProj */ = {
 			isa = PBXGroup;
 			children = (
+				A4F1295C24EFE2EC00822E74 /* task.xml */,
 				A42EA3BE22E97933005B72A0 /* Block */,
 				A42EA12222E84587005B72A0 /* Memory */,
 				A45FAE9B21D1009D00C4CC0F /* Web */,
@@ -606,6 +614,7 @@
 			files = (
 				A4AE6DE41D655FDD0038E4A1 /* LaunchScreen.storyboard in Resources */,
 				A4AE6DE11D655FDD0038E4A1 /* Assets.xcassets in Resources */,
+				A4F1295D24EFE2EC00822E74 /* task.xml in Resources */,
 				A4AE6DDF1D655FDD0038E4A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -678,6 +687,7 @@
 				A45BF5DD1D755CA900D292E0 /* QKFileAudioPlayer.m in Sources */,
 				A42EA12522E845F5005B72A0 /* CPMemoryViewController.m in Sources */,
 				A42EA3C122E97A06005B72A0 /* CPBlockViewController.m in Sources */,
+				A4F1295B24EFACA700822E74 /* CPProc.m in Sources */,
 				A4AE6E0F1D66ECDA0038E4A1 /* UITableView+CPAutoSizingCategory.m in Sources */,
 				A45BF5E11D75622200D292E0 /* ReachabilityManager.m in Sources */,
 				A490D3481E0A2A1300E3C4B9 /* NSData+DOUMappedFile.m in Sources */,
@@ -846,6 +856,7 @@
 			baseConfigurationReference = 31D30CCE48ED42248E17F934 /* Pods-commonProj.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;

@@ -79,6 +79,7 @@ PODS:
     - SDWebImage/Core (= 5.0.6)
   - SDWebImage/Core (5.0.6)
   - TPCircularBuffer (1.6.1)
+  - TTBSPatch (1.0.0)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -94,10 +95,13 @@ DEPENDENCIES:
   - RXPromise (~> 1.0.5)
   - SDWebImage (~> 5.0.0)
   - TPCircularBuffer (~> 1.4)
+  - TTBSPatch (= 1.0.0)
   - YYKit (~> 1.0.7)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  ssh://gerrit.zhenguanyu.com:29418/ios-specs:
+    - TTBSPatch
+  trunk:
     - AFDownloadRequestOperation
     - AFNetworking
     - ASIHTTPRequest
@@ -123,8 +127,9 @@ SPEC CHECKSUMS:
   RXPromise: b1e6d6d747db2e0dc53f11ba2a0fbff2456d25e5
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   TPCircularBuffer: c13243556527551c4d320709c7b14a6d20cdc30a
+  TTBSPatch: 4da884a10aaa7b507fb6c87b8d05576544068bae
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 06ac35192fe7fa1b4c117a1e0ea95c720cc73aa7
+PODFILE CHECKSUM: b39d028dab174feac333ce1a85730e87b3219255
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4
